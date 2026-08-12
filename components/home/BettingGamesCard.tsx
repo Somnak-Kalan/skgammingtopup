@@ -5,11 +5,11 @@ import { useState } from "react";
 
 import {
   bettingGames,
-} from "@/data/betting-games";
+} from "@/data/betting";
 
 import type {
   BettingGame,
-} from "@/data/betting-games";
+} from "@/data/betting";
 
 import styles from "./BettingGamesCard.module.css";
 
