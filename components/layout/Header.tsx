@@ -43,10 +43,18 @@ export default function Header() {
   const telegramUrl =
     `https://t.me/${telegramUsername}`;
 
+  /**
+   * Close mobile navigation
+   * whenever the current route changes.
+   */
   useEffect(() => {
     setMenuOpen(false);
   }, [pathname]);
 
+  /**
+   * Close navigation when
+   * Escape key is pressed.
+   */
   useEffect(() => {
     const handleEscape = (
       event: KeyboardEvent,
@@ -69,13 +77,37 @@ export default function Header() {
     };
   }, []);
 
+  /**
+   * Check whether navigation
+   * link is currently active.
+   */
   const checkActiveRoute = (
     href: string,
   ): boolean => {
+    /**
+     * usePathname() may temporarily
+     * return null.
+     */
+    if (!pathname) {
+      return false;
+    }
+
+    /**
+     * Home page should only match "/".
+     */
     if (href === "/") {
       return pathname === "/";
     }
 
+    /**
+     * Examples:
+     *
+     * /games
+     *
+     * also matches
+     *
+     * /games/mobile-legends
+     */
     return (
       pathname === href ||
       pathname.startsWith(
@@ -95,25 +127,32 @@ export default function Header() {
         .filter(Boolean)
         .join(" ")}
     >
-      {/* Animated background lights */}
+      {/* ================================= */}
+      {/* Animated Background */}
+      {/* ================================= */}
+
       <div
         className="header-background-effects"
         aria-hidden="true"
       >
         <span className="header-glow header-glow-one" />
+
         <span className="header-glow header-glow-two" />
+
         <span className="header-moving-light" />
       </div>
 
-      {/* Small top header */}
+      {/* ================================= */}
+      {/* Top Header */}
+      {/* ================================= */}
+
       <div className="header-top">
         <div className="container header-top-content">
           <div className="header-top-message">
             <span className="header-live-indicator" />
 
             <span>
-              Fast game top-up for
-              Cambodia
+              Fast game top-up for Cambodia
             </span>
           </div>
 
@@ -139,9 +178,14 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main navigation */}
+      {/* ================================= */}
+      {/* Main Header */}
+      {/* ================================= */}
+
       <div className="header-main">
         <div className="container header-main-content">
+          {/* Logo */}
+
           <Link
             href="/"
             className="brand"
@@ -168,13 +212,14 @@ export default function Header() {
                 SK GAMMING
               </span>
 
-              <strong>
-                TOPUP
-              </strong>
+              <strong>TOPUP</strong>
             </span>
           </Link>
 
-          {/* Mobile menu button */}
+          {/* ================================= */}
+          {/* Mobile Menu Button */}
+          {/* ================================= */}
+
           <button
             type="button"
             className={[
@@ -202,6 +247,10 @@ export default function Header() {
             <span />
             <span />
           </button>
+
+          {/* ================================= */}
+          {/* Navigation */}
+          {/* ================================= */}
 
           <nav
             id="main-navigation"
@@ -254,13 +303,20 @@ export default function Header() {
               )}
             </div>
 
+            {/* ================================= */}
+            {/* Telegram Support */}
+            {/* ================================= */}
+
             <a
               href={telegramUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="header-support-button"
             >
-              <span className="support-button-glow" />
+              <span
+                className="support-button-glow"
+                aria-hidden="true"
+              />
 
               <span className="support-button-icon">
                 <TelegramIcon />

@@ -1,0 +1,11 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/betting/page": "app/betting/page.js",
+  "/games/gameList/page": "app/games/gameList/page.js",
+  "/games/honor-of-kings/page": "app/games/honor-of-kings/page.js",
+  "/games/mlbb/page": "app/games/mlbb/page.js",
+  "/games/page": "app/games/page.js",
+  "/page": "app/page.js",
+  "/promotions/page": "app/promotions/page.js"
+}

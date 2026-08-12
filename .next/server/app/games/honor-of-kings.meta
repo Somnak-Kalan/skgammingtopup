@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/games/layout,_N_T_/games/honor-of-kings/layout,_N_T_/games/honor-of-kings/page,_N_T_/games/honor-of-kings"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/games/honor-of-kings/__PAGE__",
+    "/games/honor-of-kings",
+    "/games",
+    "/_index",
+    "/_head"
+  ]
+}

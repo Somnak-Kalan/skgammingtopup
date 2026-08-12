@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/games/layout,_N_T_/games/mlbb/layout,_N_T_/games/mlbb/page,_N_T_/games/mlbb"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/games/mlbb/__PAGE__",
+    "/games/mlbb",
+    "/games",
+    "/_index",
+    "/_head"
+  ]
+}

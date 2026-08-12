@@ -1,0 +1,11 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/betting/page": "/betting",
+  "/games/gameList/page": "/games/gameList",
+  "/games/honor-of-kings/page": "/games/honor-of-kings",
+  "/games/mlbb/page": "/games/mlbb",
+  "/games/page": "/games",
+  "/page": "/",
+  "/promotions/page": "/promotions"
+}
