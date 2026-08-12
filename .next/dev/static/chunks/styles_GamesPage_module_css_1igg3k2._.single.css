@@ -1,0 +1,974 @@
+/* [project]/styles/GamesPage.module.css [app-client] (css) */
+.GamesPage-module__ZIxEYq__gamesPage {
+  isolation: isolate;
+  color: #fff;
+  background: linear-gradient(#242b2f 0%, #1d2428 52%, #151c20 100%);
+  min-height: 100vh;
+  padding: 46px 0 95px;
+  position: relative;
+  overflow: hidden;
+}
+
+.GamesPage-module__ZIxEYq__backgroundCircleOne, .GamesPage-module__ZIxEYq__backgroundCircleTwo {
+  z-index: -6;
+  pointer-events: none;
+  border: 75px solid #ffffff07;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.GamesPage-module__ZIxEYq__backgroundCircleOne {
+  width: 1050px;
+  height: 1050px;
+  top: -470px;
+  left: -350px;
+}
+
+.GamesPage-module__ZIxEYq__backgroundCircleTwo {
+  width: 1350px;
+  height: 1350px;
+  bottom: -720px;
+  right: -540px;
+}
+
+.GamesPage-module__ZIxEYq__backgroundGlowOne, .GamesPage-module__ZIxEYq__backgroundGlowTwo {
+  z-index: -5;
+  pointer-events: none;
+  filter: blur(45px);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.GamesPage-module__ZIxEYq__backgroundGlowOne {
+  background: radial-gradient(circle, #1fb1ef29, #0000 68%);
+  width: 590px;
+  height: 590px;
+  animation: 9s ease-in-out infinite GamesPage-module__ZIxEYq__backgroundGlowOneMove;
+  top: -200px;
+  left: -170px;
+}
+
+.GamesPage-module__ZIxEYq__backgroundGlowTwo {
+  background: radial-gradient(circle, #6951ff1f, #0000 68%);
+  width: 750px;
+  height: 750px;
+  animation: 10s ease-in-out infinite GamesPage-module__ZIxEYq__backgroundGlowTwoMove;
+  bottom: -350px;
+  right: -260px;
+}
+
+.GamesPage-module__ZIxEYq__backgroundLightSweep {
+  z-index: -4;
+  pointer-events: none;
+  background: linear-gradient(90deg, #0000, #44caff0e, #0000);
+  width: 13%;
+  height: 450%;
+  animation: 11s ease-in-out infinite GamesPage-module__ZIxEYq__backgroundSweepMove;
+  position: absolute;
+  top: -150%;
+  left: -27%;
+  transform: rotate(23deg);
+}
+
+.GamesPage-module__ZIxEYq__backgroundGrid {
+  z-index: -7;
+  pointer-events: none;
+  background-image: linear-gradient(#ff0 1px, #0000 1px), linear-gradient(90deg, #ffffff04 1px, #0000 1px);
+  background-size: 58px 58px;
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: linear-gradient(#000, #0000 95%);
+  mask-image: linear-gradient(#000, #0000 95%);
+}
+
+.GamesPage-module__ZIxEYq__gamesContainer {
+  z-index: 2;
+  width: min(1450px, 100% - 60px);
+  margin: 0 auto;
+  position: relative;
+}
+
+.GamesPage-module__ZIxEYq__gamesHeader {
+  isolation: isolate;
+  background: linear-gradient(135deg, #2b353bf7, #1a2328fa);
+  border: 1px solid #fff1;
+  border-radius: 21px;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  padding: 38px 40px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 60px #0000004f;
+}
+
+.GamesPage-module__ZIxEYq__headerAnimatedBorder {
+  z-index: 10;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: .5;
+  -webkit-mask-composite: xor;
+  background: conic-gradient(#0000 0deg 65deg, #43cdff73 100deg, #6f54ff4f 150deg, #0000 205deg 290deg, #3bc4fa61 330deg, #0000 360deg);
+  padding: 1px;
+  animation: 10s linear infinite GamesPage-module__ZIxEYq__headerBorderRotate;
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+  -webkit-mask-position: 0 0, 0 0;
+  -webkit-mask-size: auto, auto;
+  -webkit-mask-repeat: repeat, repeat;
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-origin: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  -webkit-mask-source-type: auto, auto;
+  mask-mode: match-source, match-source;
+}
+
+.GamesPage-module__ZIxEYq__headerGlow {
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(26px);
+  background: radial-gradient(circle, #27bcf62e, #0000 68%);
+  border-radius: 50%;
+  width: 500px;
+  height: 500px;
+  animation: 4.5s ease-in-out infinite GamesPage-module__ZIxEYq__headerGlowPulse;
+  position: absolute;
+  bottom: -220px;
+  right: -160px;
+}
+
+.GamesPage-module__ZIxEYq__headerContent {
+  z-index: 3;
+  max-width: 720px;
+  position: relative;
+}
+
+.GamesPage-module__ZIxEYq__headerEyebrow {
+  color: #5ed4ff;
+  letter-spacing: .9px;
+  text-transform: uppercase;
+  background: #26aee81a;
+  border: 1px solid #41c6f82e;
+  border-radius: 999px;
+  align-items: center;
+  gap: 9px;
+  min-height: 30px;
+  padding: 0 12px;
+  font-size: 10px;
+  font-weight: 850;
+  display: inline-flex;
+}
+
+.GamesPage-module__ZIxEYq__headerEyebrowDot {
+  background: #51cffc;
+  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  animation: 1.7s ease-in-out infinite GamesPage-module__ZIxEYq__statusPulse;
+  box-shadow: 0 0 0 4px #51cffc17, 0 0 12px #51cffccc;
+}
+
+.GamesPage-module__ZIxEYq__pageTitle {
+  color: #fff;
+  letter-spacing: -2.4px;
+  margin: 16px 0 0;
+  font-size: clamp(39px, 5vw, 67px);
+  font-weight: 950;
+  line-height: 1;
+}
+
+.GamesPage-module__ZIxEYq__pageDescription {
+  color: #ffffff8a;
+  max-width: 680px;
+  margin: 18px 0 0;
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.GamesPage-module__ZIxEYq__gameSummary {
+  z-index: 3;
+  flex: none;
+  grid-template-columns: repeat(2, minmax(115px, 1fr));
+  gap: 12px;
+  display: grid;
+  position: relative;
+}
+
+.GamesPage-module__ZIxEYq__summaryItem {
+  isolation: isolate;
+  background: #ffffff08;
+  border: 1px solid #fff1;
+  border-radius: 15px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 106px;
+  transition: border-color .25s, box-shadow .25s, transform .25s;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.GamesPage-module__ZIxEYq__summaryItem:hover {
+  border-color: #41c7fa33;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px #00000038, 0 0 20px #2dbbf114;
+}
+
+.GamesPage-module__ZIxEYq__summaryItem strong {
+  z-index: 2;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 950;
+  line-height: 1;
+  position: relative;
+}
+
+.GamesPage-module__ZIxEYq__summaryItem > span:last-child {
+  z-index: 2;
+  color: #ffffff6e;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  margin-top: 9px;
+  font-size: 9px;
+  font-weight: 800;
+  position: relative;
+}
+
+.GamesPage-module__ZIxEYq__summaryGlow {
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(11px);
+  background: radial-gradient(#33c3fa7a, #0000 72%);
+  height: 46px;
+  animation: 2.8s ease-in-out infinite GamesPage-module__ZIxEYq__summaryGlowPulse;
+  position: absolute;
+  bottom: -23px;
+  left: 17%;
+  right: 17%;
+}
+
+.GamesPage-module__ZIxEYq__gamesSection {
+  background: #1d252ae6;
+  border: 1px solid #ffffff0d;
+  border-radius: 20px;
+  margin-top: 35px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 22px 55px #00000040;
+}
+
+.GamesPage-module__ZIxEYq__sectionHeader {
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 23px;
+  display: flex;
+}
+
+.GamesPage-module__ZIxEYq__sectionLabel {
+  color: #51cef9;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+  font-size: 9px;
+  font-weight: 850;
+  display: block;
+}
+
+.GamesPage-module__ZIxEYq__sectionTitle {
+  color: #fff;
+  letter-spacing: -.8px;
+  margin: 0;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.GamesPage-module__ZIxEYq__sectionDescription {
+  color: #ffffff63;
+  margin: 8px 0 0;
+  font-size: 11px;
+}
+
+.GamesPage-module__ZIxEYq__sectionLine {
+  background: linear-gradient(90deg, #3ac5fa75, #0000);
+  width: min(490px, 44%);
+  height: 1px;
+  margin-bottom: 11px;
+}
+
+.GamesPage-module__ZIxEYq__gamesGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  scroll-margin-top: 120px;
+  display: grid;
+}
+
+.GamesPage-module__ZIxEYq__gameCard {
+  isolation: isolate;
+  color: #fff;
+  background: var(--game-card-background, linear-gradient(135deg,
+        #353a43,
+        #505764));
+  border: 1px solid #ffffff17;
+  border-radius: 16px;
+  grid-template-columns: 40% minmax(0, 1fr);
+  min-width: 0;
+  min-height: 165px;
+  text-decoration: none;
+  transition: border-color .28s, box-shadow .28s, filter .28s, transform .24s;
+  display: grid;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  box-shadow: 0 15px 34px #00000040;
+}
+
+.GamesPage-module__ZIxEYq__gameCardAvailable {
+  cursor: pointer;
+}
+
+.GamesPage-module__ZIxEYq__gameCardAvailable:hover {
+  border-color: #43cdff99;
+  transform: translateY(-6px)scale(1.012);
+  box-shadow: 0 22px 48px #0000005e, 0 0 27px #2fbef526;
+}
+
+.GamesPage-module__ZIxEYq__gameCardAvailable:active {
+  transform: translateY(-1px)scale(.96);
+  box-shadow: 0 8px 20px #00000052, 0 0 18px #31c1f838;
+}
+
+.GamesPage-module__ZIxEYq__gameCardUpcoming {
+  cursor: default;
+  opacity: .88;
+}
+
+.GamesPage-module__ZIxEYq__gameCardUpcoming:hover {
+  opacity: .98;
+  border-color: #efc76f73;
+  transform: translateY(-4px);
+  box-shadow: 0 21px 44px #00000057, 0 0 23px #deb1551c;
+}
+
+.GamesPage-module__ZIxEYq__gameImageWrapper {
+  z-index: 2;
+  background: #181e21;
+  border-radius: 15px 0 0 15px;
+  min-width: 0;
+  min-height: 165px;
+  position: relative;
+  overflow: hidden;
+}
+
+.GamesPage-module__ZIxEYq__gameImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: filter .4s, transform .52s;
+  display: block;
+}
+
+.GamesPage-module__ZIxEYq__gameCardAvailable:hover .GamesPage-module__ZIxEYq__gameImage {
+  filter: saturate(1.09) brightness(1.06);
+  transform: scale(1.075);
+}
+
+.GamesPage-module__ZIxEYq__gameCardUpcoming .GamesPage-module__ZIxEYq__gameImage {
+  filter: grayscale(20%) saturate(.78) brightness(.75);
+}
+
+.GamesPage-module__ZIxEYq__gameCardUpcoming:hover .GamesPage-module__ZIxEYq__gameImage {
+  filter: grayscale(7%) saturate(.91) brightness(.84);
+  transform: scale(1.05);
+}
+
+.GamesPage-module__ZIxEYq__gameImageFallback {
+  color: #fff;
+  letter-spacing: -1px;
+  background: linear-gradient(145deg, #39454c, #171d20);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 165px;
+  font-size: 31px;
+  font-weight: 950;
+  display: flex;
+}
+
+.GamesPage-module__ZIxEYq__gameImageOverlay {
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to right, #0000 50%, #10141833 100%);
+  position: absolute;
+  inset: 0;
+}
+
+.GamesPage-module__ZIxEYq__upcomingImageOverlay {
+  z-index: 3;
+  pointer-events: none;
+  background: #12121112;
+  position: absolute;
+  inset: 0;
+}
+
+.GamesPage-module__ZIxEYq__gameInformation {
+  z-index: 4;
+  flex-direction: column;
+  min-width: 0;
+  padding: 18px;
+  display: flex;
+  position: relative;
+}
+
+.GamesPage-module__ZIxEYq__gameInformationTop {
+  align-items: center;
+  display: flex;
+}
+
+.GamesPage-module__ZIxEYq__statusBadge {
+  letter-spacing: .55px;
+  text-transform: uppercase;
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+  background: #0c111545;
+  border-radius: 999px;
+  align-items: center;
+  gap: 6px;
+  min-height: 23px;
+  padding: 0 8px;
+  font-size: 7px;
+  font-weight: 850;
+  display: inline-flex;
+}
+
+.GamesPage-module__ZIxEYq__statusBadgeAvailable {
+  color: #72ddff;
+  border: 1px solid #53d2ff3d;
+}
+
+.GamesPage-module__ZIxEYq__statusBadgeUpcoming {
+  color: #f1d591;
+  border: 1px solid #eeca7138;
+}
+
+.GamesPage-module__ZIxEYq__statusDot {
+  background: currentColor;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  box-shadow: 0 0 8px;
+}
+
+.GamesPage-module__ZIxEYq__statusBadgeAvailable .GamesPage-module__ZIxEYq__statusDot {
+  animation: 1.6s ease-in-out infinite GamesPage-module__ZIxEYq__availableStatusPulse;
+}
+
+.GamesPage-module__ZIxEYq__statusBadgeUpcoming .GamesPage-module__ZIxEYq__statusDot {
+  animation: 2.4s ease-in-out infinite GamesPage-module__ZIxEYq__upcomingStatusPulse;
+}
+
+.GamesPage-module__ZIxEYq__gameTitle {
+  color: #fff;
+  letter-spacing: -.3px;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin: 13px 0 0;
+  font-size: 16px;
+  font-weight: 850;
+  line-height: 1.32;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.GamesPage-module__ZIxEYq__gameMeta {
+  color: #ffffff8a;
+  align-items: center;
+  gap: 7px;
+  margin-top: 11px;
+  font-size: 10px;
+  display: flex;
+}
+
+.GamesPage-module__ZIxEYq__gameMetaDivider {
+  color: #ffffff40;
+}
+
+.GamesPage-module__ZIxEYq__gameCardFooter {
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 13px;
+  display: flex;
+}
+
+.GamesPage-module__ZIxEYq__gameActionText {
+  color: #ffffff9e;
+  letter-spacing: .55px;
+  text-transform: uppercase;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.GamesPage-module__ZIxEYq__gameActionIcon {
+  color: #fff;
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
+  background: #0c131747;
+  border: 1px solid #ffffff21;
+  border-radius: 8px;
+  flex: 0 0 30px;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  transition: background .24s, box-shadow .24s, transform .24s;
+  display: inline-flex;
+}
+
+.GamesPage-module__ZIxEYq__gameActionIcon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.GamesPage-module__ZIxEYq__gameCardAvailable:hover .GamesPage-module__ZIxEYq__gameActionIcon {
+  background: linear-gradient(135deg, #078fce, #20b9ee);
+  transform: translateX(3px)scale(1.06);
+  box-shadow: 0 8px 20px #1499d24d, 0 0 16px #30c2f72b;
+}
+
+.GamesPage-module__ZIxEYq__gameActionIconUpcoming {
+  color: #edd391;
+}
+
+.GamesPage-module__ZIxEYq__cardAnimatedBorder {
+  z-index: 20;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  -webkit-mask-composite: xor;
+  background: conic-gradient(#0000 0deg 50deg, #43cfff1a 76deg, #4ddafff0 108deg, #705cffa6 151deg, #0000 196deg 282deg, #3bc4fab8 328deg, #0000 360deg);
+  padding: 1.5px;
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: linear-gradient(#000 0 0), linear-gradient(#000 0 0);
+  -webkit-mask-position: 0 0, 0 0;
+  -webkit-mask-size: auto, auto;
+  -webkit-mask-repeat: repeat, repeat;
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-origin: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  -webkit-mask-source-type: auto, auto;
+  mask-mode: match-source, match-source;
+}
+
+.GamesPage-module__ZIxEYq__gameCardAvailable:hover .GamesPage-module__ZIxEYq__cardAnimatedBorder {
+  opacity: 1;
+  animation: 3s linear infinite GamesPage-module__ZIxEYq__cardBorderRotate;
+}
+
+.GamesPage-module__ZIxEYq__gameCardUpcoming:hover .GamesPage-module__ZIxEYq__cardAnimatedBorder {
+  opacity: .76;
+  background: conic-gradient(#0000, #f1c86ce6, #0000 36% 72%, #ffe3949e, #0000);
+  animation: 4s linear infinite GamesPage-module__ZIxEYq__cardBorderRotate;
+}
+
+.GamesPage-module__ZIxEYq__cardOuterGlow {
+  z-index: -1;
+  pointer-events: none;
+  filter: blur(13px);
+  opacity: 0;
+  background: radial-gradient(#31c4fb66, #0000 72%);
+  height: 50px;
+  position: absolute;
+  bottom: -23px;
+  left: 8%;
+  right: 8%;
+}
+
+.GamesPage-module__ZIxEYq__gameCardAvailable:hover .GamesPage-module__ZIxEYq__cardOuterGlow {
+  opacity: .76;
+  animation: 2s ease-in-out infinite GamesPage-module__ZIxEYq__cardGlowPulse;
+}
+
+.GamesPage-module__ZIxEYq__gameCardUpcoming .GamesPage-module__ZIxEYq__cardOuterGlow {
+  background: radial-gradient(#e0b45a5c, #0000 72%);
+}
+
+.GamesPage-module__ZIxEYq__gameCardUpcoming:hover .GamesPage-module__ZIxEYq__cardOuterGlow {
+  opacity: .56;
+  animation: 2.5s ease-in-out infinite GamesPage-module__ZIxEYq__cardGlowPulse;
+}
+
+.GamesPage-module__ZIxEYq__cardShine {
+  z-index: 18;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(90deg, #0000, #fff3, #0000);
+  width: 18%;
+  height: 380%;
+  position: absolute;
+  top: -130%;
+  left: -42%;
+  transform: rotate(23deg);
+}
+
+.GamesPage-module__ZIxEYq__gameCard:hover .GamesPage-module__ZIxEYq__cardShine {
+  opacity: 1;
+  animation: .8s forwards GamesPage-module__ZIxEYq__cardShineMove;
+}
+
+.GamesPage-module__ZIxEYq__seeMoreContainer {
+  justify-content: center;
+  margin-top: 28px;
+  display: flex;
+}
+
+.GamesPage-module__ZIxEYq__seeMoreButton {
+  isolation: isolate;
+  color: #fff;
+  letter-spacing: .55px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: linear-gradient(135deg, #087fb9, #20b8eb);
+  border: 1px solid #ffffff21;
+  border-radius: 11px;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  min-height: 47px;
+  padding: 0 18px 0 22px;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 850;
+  transition: box-shadow .25s, filter .25s, transform .2s;
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 28px #1499d245;
+}
+
+.GamesPage-module__ZIxEYq__seeMoreButton:hover {
+  filter: brightness(1.08);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px #1499d263, 0 0 24px #2fc4f92e;
+}
+
+.GamesPage-module__ZIxEYq__seeMoreButton:active {
+  transform: translateY(0)scale(.96);
+}
+
+.GamesPage-module__ZIxEYq__seeMoreButtonGlow {
+  z-index: -2;
+  pointer-events: none;
+  filter: blur(12px);
+  background: radial-gradient(#4bd2ff8c, #0000 72%);
+  height: 45px;
+  animation: 2.2s ease-in-out infinite GamesPage-module__ZIxEYq__seeMoreGlowPulse;
+  position: absolute;
+  bottom: -23px;
+  left: 12%;
+  right: 12%;
+}
+
+.GamesPage-module__ZIxEYq__seeMoreButtonShine {
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(90deg, #0000, #ffffff4f, #0000);
+  width: 20%;
+  height: 370%;
+  position: absolute;
+  top: -130%;
+  left: -40%;
+  transform: rotate(23deg);
+}
+
+.GamesPage-module__ZIxEYq__seeMoreButton:hover .GamesPage-module__ZIxEYq__seeMoreButtonShine {
+  animation: .85s forwards GamesPage-module__ZIxEYq__seeMoreShineMove;
+}
+
+.GamesPage-module__ZIxEYq__seeMoreIcon {
+  color: #0a91ce;
+  background: #fff;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  width: 29px;
+  height: 29px;
+  display: inline-flex;
+}
+
+.GamesPage-module__ZIxEYq__seeMoreIcon svg {
+  width: 16px;
+  height: 16px;
+  transition: transform .25s;
+}
+
+.GamesPage-module__ZIxEYq__chevronExpanded {
+  transform: rotate(180deg);
+}
+
+@keyframes GamesPage-module__ZIxEYq__backgroundGlowOneMove {
+  0%, 100% {
+    opacity: .43;
+    transform: translate3d(0, 0, 0)scale(.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate3d(70px, 35px, 0)scale(1.08);
+  }
+}
+
+@keyframes GamesPage-module__ZIxEYq__backgroundGlowTwoMove {
+  0%, 100% {
+    opacity: .38;
+    transform: translate3d(0, 0, 0)scale(.9);
+  }
+
+  50% {
+    opacity: .9;
+    transform: translate3d(-70px, -35px, 0)scale(1.07);
+  }
+}
+
+@keyframes GamesPage-module__ZIxEYq__backgroundSweepMove {
+  0%, 42% {
+    left: -27%;
+  }
+
+  72%, 100% {
+    left: 125%;
+  }
+}
+
+@keyframes GamesPage-module__ZIxEYq__headerBorderRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes GamesPage-module__ZIxEYq__headerGlowPulse {
+  0%, 100% {
+    opacity: .4;
+    transform: scale(.88);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes GamesPage-module__ZIxEYq__statusPulse {
+  0%, 100% {
+    opacity: .5;
+    transform: scale(.77);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.14);
+  }
+}
+
+@keyframes GamesPage-module__ZIxEYq__summaryGlowPulse {
+  0%, 100% {
+    opacity: .34;
+    transform: scaleX(.82);
+  }
+
+  50% {
+    opacity: .9;
+    transform: scaleX(1.08);
+  }
+}
+
+@keyframes GamesPage-module__ZIxEYq__availableStatusPulse {
+  0%, 100% {
+    opacity: .5;
+    transform: scale(.75);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.14);
+  }
+}
+
+@keyframes GamesPage-module__ZIxEYq__upcomingStatusPulse {
+  0%, 100% {
+    opacity: .35;
+  }
+
+  50% {
+    opacity: .9;
+  }
+}
+
+@keyframes GamesPage-module__ZIxEYq__cardBorderRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes GamesPage-module__ZIxEYq__cardGlowPulse {
+  0%, 100% {
+    opacity: .32;
+    transform: scaleX(.82);
+  }
+
+  50% {
+    opacity: .88;
+    transform: scaleX(1.08);
+  }
+}
+
+@keyframes GamesPage-module__ZIxEYq__cardShineMove {
+  from {
+    left: -42%;
+  }
+
+  to {
+    left: 125%;
+  }
+}
+
+@keyframes GamesPage-module__ZIxEYq__seeMoreGlowPulse {
+  0%, 100% {
+    opacity: .38;
+    transform: scaleX(.85);
+  }
+
+  50% {
+    opacity: .95;
+    transform: scaleX(1.08);
+  }
+}
+
+@keyframes GamesPage-module__ZIxEYq__seeMoreShineMove {
+  from {
+    left: -40%;
+  }
+
+  to {
+    left: 125%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .GamesPage-module__ZIxEYq__gamesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .GamesPage-module__ZIxEYq__gamesHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .GamesPage-module__ZIxEYq__gameSummary {
+    width: 100%;
+  }
+
+  .GamesPage-module__ZIxEYq__gamesContainer {
+    width: min(100% - 32px, 1450px);
+  }
+}
+
+@media (max-width: 700px) {
+  .GamesPage-module__ZIxEYq__gamesPage {
+    padding: 27px 0 65px;
+  }
+
+  .GamesPage-module__ZIxEYq__gamesContainer {
+    width: calc(100% - 22px);
+  }
+
+  .GamesPage-module__ZIxEYq__gamesHeader {
+    border-radius: 17px;
+    padding: 27px 23px;
+  }
+
+  .GamesPage-module__ZIxEYq__pageTitle {
+    letter-spacing: -1.8px;
+    font-size: 43px;
+  }
+
+  .GamesPage-module__ZIxEYq__pageDescription {
+    font-size: 13px;
+  }
+
+  .GamesPage-module__ZIxEYq__gamesSection {
+    border-radius: 17px;
+    margin-top: 23px;
+    padding: 20px 15px;
+  }
+
+  .GamesPage-module__ZIxEYq__sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .GamesPage-module__ZIxEYq__sectionLine {
+    width: 100%;
+  }
+
+  .GamesPage-module__ZIxEYq__gamesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .GamesPage-module__ZIxEYq__gameCard {
+    grid-template-columns: 135px minmax(0, 1fr);
+    min-height: 150px;
+  }
+
+  .GamesPage-module__ZIxEYq__gameImageWrapper, .GamesPage-module__ZIxEYq__gameImageFallback {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 430px) {
+  .GamesPage-module__ZIxEYq__gameCard {
+    grid-template-columns: 115px minmax(0, 1fr);
+  }
+
+  .GamesPage-module__ZIxEYq__gameInformation {
+    padding: 14px;
+  }
+
+  .GamesPage-module__ZIxEYq__gameTitle {
+    font-size: 14px;
+  }
+
+  .GamesPage-module__ZIxEYq__gameMeta {
+    font-size: 9px;
+  }
+
+  .GamesPage-module__ZIxEYq__gameActionText {
+    display: none;
+  }
+
+  .GamesPage-module__ZIxEYq__seeMoreButton {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .GamesPage-module__ZIxEYq__backgroundGlowOne, .GamesPage-module__ZIxEYq__backgroundGlowTwo, .GamesPage-module__ZIxEYq__backgroundLightSweep, .GamesPage-module__ZIxEYq__headerAnimatedBorder, .GamesPage-module__ZIxEYq__headerGlow, .GamesPage-module__ZIxEYq__headerEyebrowDot, .GamesPage-module__ZIxEYq__summaryGlow, .GamesPage-module__ZIxEYq__statusBadgeAvailable .GamesPage-module__ZIxEYq__statusDot, .GamesPage-module__ZIxEYq__statusBadgeUpcoming .GamesPage-module__ZIxEYq__statusDot, .GamesPage-module__ZIxEYq__gameCardAvailable:hover .GamesPage-module__ZIxEYq__cardAnimatedBorder, .GamesPage-module__ZIxEYq__gameCardUpcoming:hover .GamesPage-module__ZIxEYq__cardAnimatedBorder, .GamesPage-module__ZIxEYq__gameCardAvailable:hover .GamesPage-module__ZIxEYq__cardOuterGlow, .GamesPage-module__ZIxEYq__gameCardUpcoming:hover .GamesPage-module__ZIxEYq__cardOuterGlow, .GamesPage-module__ZIxEYq__seeMoreButtonGlow {
+    animation: none;
+  }
+
+  .GamesPage-module__ZIxEYq__summaryItem, .GamesPage-module__ZIxEYq__gameCard, .GamesPage-module__ZIxEYq__gameImage, .GamesPage-module__ZIxEYq__gameActionIcon, .GamesPage-module__ZIxEYq__seeMoreButton, .GamesPage-module__ZIxEYq__seeMoreIcon svg {
+    transition-duration: .01ms;
+  }
+}
+
+/*# sourceMappingURL=styles_GamesPage_module_css_1igg3k2._.single.css.map*/

@@ -1,0 +1,680 @@
+/* [project]/components/home/EsportsBettingCard.module.css [app-client] (css) */
+.EsportsBettingCard-module__atBDWq__betSection {
+  background: radial-gradient(circle at 50% 100%, #4583ff1f, #0000 42%), #0d172b;
+  width: 100%;
+  padding: 70px 0;
+  overflow: hidden;
+}
+
+.EsportsBettingCard-module__atBDWq__betCard {
+  isolation: isolate;
+  color: #fff;
+  background: radial-gradient(circle at 0 0, #4b85ff29, #0000 34%), radial-gradient(circle at 100% 0, #1fd2ff14, #0000 28%), #111d33;
+  border: 1px solid #ffffff14;
+  border-radius: 22px;
+  grid-template-columns: 350px minmax(0, 1fr);
+  gap: 25px;
+  width: min(100% - 48px, 1500px);
+  margin: 0 auto;
+  padding: 28px;
+  display: grid;
+  position: relative;
+  box-shadow: 0 25px 70px #0000006b, 0 0 40px #427eff24;
+}
+
+.EsportsBettingCard-module__atBDWq__animatedBorder {
+  z-index: -2;
+  pointer-events: none;
+  border-radius: 24px;
+  position: absolute;
+  inset: -2px;
+  overflow: hidden;
+}
+
+.EsportsBettingCard-module__atBDWq__animatedBorder:before {
+  content: "";
+  background: conic-gradient(#0000 0deg 50deg, #4687fff2 90deg, #34dcffe6 120deg, #0000 165deg 250deg, #7b52ffd9 300deg, #0000 350deg);
+  width: 180%;
+  height: 180%;
+  animation: 7s linear infinite EsportsBettingCard-module__atBDWq__rotateCardLight;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)rotate(0);
+}
+
+.EsportsBettingCard-module__atBDWq__animatedBorder:after {
+  content: "";
+  background: #111d33;
+  border-radius: 20px;
+  position: absolute;
+  inset: 3px;
+}
+
+.EsportsBettingCard-module__atBDWq__bottomLight {
+  z-index: -3;
+  pointer-events: none;
+  filter: blur(17px);
+  opacity: .7;
+  background: radial-gradient(#3e84ffbf, #27d5ff40 36%, #0000 72%);
+  height: 60px;
+  animation: 2.7s ease-in-out infinite alternate EsportsBettingCard-module__atBDWq__bottomGlow;
+  position: absolute;
+  bottom: -30px;
+  left: 8%;
+  right: 8%;
+}
+
+@keyframes EsportsBettingCard-module__atBDWq__rotateCardLight {
+  to {
+    transform: translate(-50%, -50%)rotate(360deg);
+  }
+}
+
+@keyframes EsportsBettingCard-module__atBDWq__bottomGlow {
+  from {
+    opacity: .42;
+    transform: scaleX(.82);
+  }
+
+  to {
+    opacity: .95;
+    transform: scaleX(1.08);
+  }
+}
+
+.EsportsBettingCard-module__atBDWq__betIntroduction {
+  z-index: 2;
+  padding: 10px 5px 10px 0;
+  position: relative;
+}
+
+.EsportsBettingCard-module__atBDWq__betEyebrow {
+  color: #081326;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+  background: #5a91ff;
+  border-radius: 6px;
+  align-items: center;
+  min-height: 27px;
+  margin-bottom: 13px;
+  padding: 0 10px;
+  font-size: 10px;
+  font-weight: 900;
+  display: inline-flex;
+}
+
+.EsportsBettingCard-module__atBDWq__betIntroduction h2 {
+  color: #fff;
+  margin: 0;
+  font-size: 30px;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.EsportsBettingCard-module__atBDWq__betIntroduction > p {
+  color: #ffffff8c;
+  margin: 15px 0 0;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.EsportsBettingCard-module__atBDWq__promoCodeBox {
+  background: #182641;
+  border: 1px dashed #5a91ff80;
+  border-radius: 11px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-top: 27px;
+  padding: 15px;
+  display: flex;
+}
+
+.EsportsBettingCard-module__atBDWq__promoCodeBox > div {
+  flex-direction: column;
+  display: flex;
+}
+
+.EsportsBettingCard-module__atBDWq__promoCodeBox span {
+  color: #fff6;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.EsportsBettingCard-module__atBDWq__promoCodeBox strong {
+  color: #6c9eff;
+  letter-spacing: 1px;
+  margin-top: 6px;
+  font-size: 20px;
+}
+
+.EsportsBettingCard-module__atBDWq__promoCodeBox button {
+  color: #fff;
+  cursor: pointer;
+  background: #5a91ff24;
+  border: 1px solid #5a91ff47;
+  border-radius: 7px;
+  align-items: center;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 12px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  transition: background .2s, border-color .2s;
+  display: inline-flex;
+}
+
+.EsportsBettingCard-module__atBDWq__promoCodeBox button:hover {
+  background: #5a91ff40;
+  border-color: #5a91ff8c;
+}
+
+.EsportsBettingCard-module__atBDWq__promoCodeBox button svg {
+  width: 17px;
+  height: 17px;
+}
+
+.EsportsBettingCard-module__atBDWq__registerButton {
+  color: #fff;
+  background: linear-gradient(135deg, #3978f4, #6096ff);
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 15px;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: filter .2s, transform .2s;
+  display: flex;
+  box-shadow: 0 12px 25px #3978f43d;
+}
+
+.EsportsBettingCard-module__atBDWq__registerButton:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.EsportsBettingCard-module__atBDWq__registerButton svg {
+  width: 19px;
+  height: 19px;
+}
+
+.EsportsBettingCard-module__atBDWq__responsibleNotice {
+  background: #ffb52a12;
+  border: 1px solid #ffb52a26;
+  border-radius: 9px;
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: center;
+  gap: 11px;
+  margin-top: 17px;
+  padding: 12px;
+  display: grid;
+}
+
+.EsportsBettingCard-module__atBDWq__responsibleNotice strong {
+  color: #211a08;
+  background: #ffbd36;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  font-size: 12px;
+  display: inline-flex;
+}
+
+.EsportsBettingCard-module__atBDWq__responsibleNotice p {
+  color: #ffffff7a;
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.EsportsBettingCard-module__atBDWq__gamesArea {
+  z-index: 2;
+  min-width: 0;
+  position: relative;
+}
+
+.EsportsBettingCard-module__atBDWq__rewardBanner {
+  background: radial-gradient(circle at 90% 15%, #ffd85438, #0000 32%), linear-gradient(120deg, #24488fed, #163164f5 50%, #12274ff7);
+  border: 1px solid #ffd24b6b;
+  border-radius: 17px;
+  grid-template-columns: 64px minmax(0, 1fr) 68px;
+  align-items: center;
+  gap: 17px;
+  min-height: 150px;
+  margin-bottom: 22px;
+  padding: 22px;
+  display: grid;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 14px 36px #0000003b, inset 0 1px #ffffff14;
+}
+
+.EsportsBettingCard-module__atBDWq__rewardBanner:before {
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(90deg, #0000, #ffffff2e, #0000);
+  width: 28%;
+  height: 340%;
+  animation: 4.8s ease-in-out infinite EsportsBettingCard-module__atBDWq__rewardShine;
+  position: absolute;
+  top: -120%;
+  left: -30%;
+  transform: rotate(24deg);
+}
+
+.EsportsBettingCard-module__atBDWq__rewardBanner:after {
+  content: "";
+  pointer-events: none;
+  filter: blur(4px);
+  background: #ffcc401a;
+  border-radius: 50%;
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  bottom: -55px;
+  right: -35px;
+}
+
+@keyframes EsportsBettingCard-module__atBDWq__rewardShine {
+  0%, 45% {
+    left: -35%;
+  }
+
+  70%, 100% {
+    left: 125%;
+  }
+}
+
+.EsportsBettingCard-module__atBDWq__rewardIcon {
+  color: #231a03;
+  background: linear-gradient(135deg, #ffe277, #ffb52e);
+  border-radius: 17px;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  display: inline-flex;
+  box-shadow: 0 10px 24px #ffb72d3d;
+}
+
+.EsportsBettingCard-module__atBDWq__rewardIcon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.EsportsBettingCard-module__atBDWq__rewardContent {
+  flex-direction: column;
+  min-width: 0;
+  display: flex;
+}
+
+.EsportsBettingCard-module__atBDWq__rewardLabel {
+  color: #ffcf4a;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 850;
+}
+
+.EsportsBettingCard-module__atBDWq__rewardContent h3 {
+  color: #fff;
+  max-width: 720px;
+  margin: 7px 0 0;
+  font-size: clamp(20px, 2.1vw, 29px);
+  font-weight: 900;
+  line-height: 1.18;
+}
+
+.EsportsBettingCard-module__atBDWq__rewardContent p {
+  color: #ffffffa6;
+  margin: 9px 0 0;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.EsportsBettingCard-module__atBDWq__rewardWarning {
+  color: #ffdc70c7;
+  margin-top: 7px;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.EsportsBettingCard-module__atBDWq__rewardMoneyIcon {
+  color: #ffd653bf;
+  justify-content: center;
+  align-items: center;
+  width: 68px;
+  height: 68px;
+  animation: 2.4s ease-in-out infinite EsportsBettingCard-module__atBDWq__moneyFloat;
+  display: inline-flex;
+}
+
+.EsportsBettingCard-module__atBDWq__rewardMoneyIcon svg {
+  width: 55px;
+  height: 55px;
+}
+
+@keyframes EsportsBettingCard-module__atBDWq__moneyFloat {
+  0%, 100% {
+    transform: translateY(0)rotate(-4deg);
+  }
+
+  50% {
+    transform: translateY(-8px)rotate(4deg);
+  }
+}
+
+.EsportsBettingCard-module__atBDWq__gamesHeader {
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.EsportsBettingCard-module__atBDWq__gamesHeader > div {
+  flex-direction: column;
+  display: flex;
+}
+
+.EsportsBettingCard-module__atBDWq__gamesHeader span {
+  color: #fff6;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.EsportsBettingCard-module__atBDWq__gamesHeader h3 {
+  color: #fff;
+  margin: 5px 0 0;
+  font-size: 19px;
+}
+
+.EsportsBettingCard-module__atBDWq__viewAllButton {
+  color: #fff;
+  background: #5a91ff24;
+  border: 1px solid #5a91ff47;
+  border-radius: 7px;
+  align-items: center;
+  gap: 8px;
+  min-height: 39px;
+  padding: 0 14px;
+  font-size: 11px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background .2s, transform .2s;
+  display: inline-flex;
+}
+
+.EsportsBettingCard-module__atBDWq__viewAllButton:hover {
+  background: #4f86f7;
+  transform: translateY(-1px);
+}
+
+.EsportsBettingCard-module__atBDWq__viewAllButton svg {
+  width: 17px;
+  height: 17px;
+}
+
+.EsportsBettingCard-module__atBDWq__gamesGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  display: grid;
+}
+
+.EsportsBettingCard-module__atBDWq__smallGameCard {
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  background: #ffffff0f;
+  border: 1px solid #5a91ff8c;
+  border-radius: 14px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  min-height: 86px;
+  padding: 12px 14px;
+  font-family: inherit;
+  transition: transform .2s, border-color .2s, background .2s, box-shadow .2s;
+  display: flex;
+  box-shadow: inset 0 1px #ffffff0a, 0 8px 20px #00000024;
+}
+
+.EsportsBettingCard-module__atBDWq__smallGameCard:hover:not(:disabled) {
+  background: #ffffff17;
+  border-color: #5a91ff;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px #00000038;
+}
+
+.EsportsBettingCard-module__atBDWq__smallGameCard:focus-visible {
+  outline-offset: 3px;
+  outline: 3px solid #5a91ffe6;
+}
+
+.EsportsBettingCard-module__atBDWq__smallGameCard:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+
+.EsportsBettingCard-module__atBDWq__smallGameCardLeft {
+  flex: 1;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  display: flex;
+}
+
+.EsportsBettingCard-module__atBDWq__smallGameCardImageBox {
+  background: #ffffffeb;
+  border-radius: 12px;
+  flex: 0 0 48px;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.EsportsBettingCard-module__atBDWq__gameIconImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.EsportsBettingCard-module__atBDWq__gameIconFallback {
+  color: #fff;
+  background: linear-gradient(135deg, #315ca9, #5a91ff);
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 13px;
+  font-weight: 900;
+  display: flex;
+}
+
+.EsportsBettingCard-module__atBDWq__smallGameCardText {
+  flex-direction: column;
+  min-width: 0;
+  display: flex;
+}
+
+.EsportsBettingCard-module__atBDWq__smallGameCardText strong {
+  color: #fff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 750;
+  overflow: hidden;
+}
+
+.EsportsBettingCard-module__atBDWq__smallGameCardText small {
+  color: #ffffff8c;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 4px;
+  font-size: 11px;
+  overflow: hidden;
+}
+
+.EsportsBettingCard-module__atBDWq__smallGameCardRight {
+  color: #5a91ff;
+  flex: 0 0 24px;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+}
+
+.EsportsBettingCard-module__atBDWq__smallGameCardRight svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 1250px) {
+  .EsportsBettingCard-module__atBDWq__gamesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1050px) {
+  .EsportsBettingCard-module__atBDWq__betCard {
+    grid-template-columns: 1fr;
+  }
+
+  .EsportsBettingCard-module__atBDWq__betIntroduction {
+    padding-right: 0;
+  }
+
+  .EsportsBettingCard-module__atBDWq__gamesGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .EsportsBettingCard-module__atBDWq__gamesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .EsportsBettingCard-module__atBDWq__rewardBanner {
+    grid-template-columns: 58px minmax(0, 1fr);
+  }
+
+  .EsportsBettingCard-module__atBDWq__rewardIcon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .EsportsBettingCard-module__atBDWq__rewardMoneyIcon {
+    display: none;
+  }
+}
+
+@media (max-width: 590px) {
+  .EsportsBettingCard-module__atBDWq__betSection {
+    padding: 45px 0;
+  }
+
+  .EsportsBettingCard-module__atBDWq__betCard {
+    gap: 22px;
+    width: calc(100% - 22px);
+    padding: 21px 14px;
+  }
+
+  .EsportsBettingCard-module__atBDWq__betIntroduction h2 {
+    font-size: 24px;
+  }
+
+  .EsportsBettingCard-module__atBDWq__rewardBanner {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .EsportsBettingCard-module__atBDWq__rewardIcon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .EsportsBettingCard-module__atBDWq__rewardIcon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .EsportsBettingCard-module__atBDWq__rewardContent h3 {
+    font-size: 21px;
+  }
+
+  .EsportsBettingCard-module__atBDWq__gamesHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .EsportsBettingCard-module__atBDWq__viewAllButton {
+    min-height: 36px;
+    padding: 0 11px;
+  }
+
+  .EsportsBettingCard-module__atBDWq__gamesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .EsportsBettingCard-module__atBDWq__smallGameCard {
+    min-height: 78px;
+    padding: 11px 12px;
+  }
+
+  .EsportsBettingCard-module__atBDWq__smallGameCardImageBox {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .EsportsBettingCard-module__atBDWq__smallGameCardText strong {
+    font-size: 13px;
+  }
+
+  .EsportsBettingCard-module__atBDWq__smallGameCardText small {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .EsportsBettingCard-module__atBDWq__betCard {
+    width: calc(100% - 16px);
+    padding: 18px 10px;
+  }
+
+  .EsportsBettingCard-module__atBDWq__promoCodeBox {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .EsportsBettingCard-module__atBDWq__promoCodeBox button {
+    justify-content: center;
+  }
+
+  .EsportsBettingCard-module__atBDWq__viewAllButton {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .EsportsBettingCard-module__atBDWq__animatedBorder:before, .EsportsBettingCard-module__atBDWq__bottomLight, .EsportsBettingCard-module__atBDWq__rewardBanner:before, .EsportsBettingCard-module__atBDWq__rewardMoneyIcon {
+    animation: none;
+  }
+}
+
+/*# sourceMappingURL=components_home_EsportsBettingCard_module_css_1igg3k2._.single.css.map*/

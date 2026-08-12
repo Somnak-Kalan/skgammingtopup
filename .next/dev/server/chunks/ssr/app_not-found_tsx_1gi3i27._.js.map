@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/somnak-it/Documents/SOMNAK/SK%20GAMMING%20TOP%20UP/skgammingtopup/app/not-found.tsx"],"sourcesContent":["import Link from \"next/link\";\n\nexport default function NotFoundPage() {\n  return (\n    <section className=\"not-found-page\">\n      <div className=\"container not-found-content\">\n        <span className=\"not-found-code\">404</span>\n\n        <h1>Page not found</h1>\n\n        <p>\n          The page may have moved or the game is not available\n          yet.\n        </p>\n\n        <Link href=\"/\" className=\"primary-button\">\n          Return home\n        </Link>\n      </div>\n    </section>\n  );\n}"],"names":["NotFoundPage","className","href"],"mappings":";;;;;AAAA;;;AAEe,SAASA;IACtB,qBACE,8OAAC;QAAQC,WAAU;kBACjB,cAAA,8OAAC;YAAIA,WAAU;;8BACb,8OAAC;oBAAKA,WAAU;8BAAiB;;;;;;8BAEjC,8OAAC;8BAAG;;;;;;8BAEJ,8OAAC;8BAAE;;;;;;8BAKH,8OAAC,0LAAI;oBAACC,MAAK;oBAAID,WAAU;8BAAiB;;;;;;;;;;;;;;;;;AAMlD"}}]
+}

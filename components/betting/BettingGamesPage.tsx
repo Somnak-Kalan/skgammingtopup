@@ -1,3 +1,7 @@
+"use client";
+
+import { useMemo, useState } from "react";
+
 import {
   bettingConfig,
   bettingGames as rawBettingGames,
@@ -7,9 +11,9 @@ import type {
   BettingGame as RawBettingGame,
 } from "@/data/betting";
 
-type BettingCategory =
-  | "esports"
-  | "sports";
+import styles from "@/styles/BettingGamesPage.module.css";
+
+type BettingCategory = "esports" | "sports";
 
 type BettingGame = RawBettingGame & {
   category: BettingCategory;
@@ -17,38 +21,42 @@ type BettingGame = RawBettingGame & {
   partnerUrl: string;
 };
 
-const bettingGames: BettingGame[] =
-  rawBettingGames.map((game) => ({
-    ...game,
-    category: "esports",
-    description: `${game.name} esports betting`,
-    partnerUrl: game.affiliateUrl,
-  }));
-
-import styles from "@/styles/BettingGamesPage.module.css";
-
-type CategoryFilter =
-  | "all"
-  | BettingCategory;
+type CategoryFilter = "all" | BettingCategory;
 
 interface GameImageProps {
   game: BettingGame;
 }
 
-function getInitials(
-  value: string,
-): string {
+/**
+ * Convert the original betting data into the format
+ * required by this page.
+ */
+const bettingGames: BettingGame[] = rawBettingGames.map((game) => ({
+  ...game,
+  category: "esports",
+  description: `${game.name} esports betting`,
+  partnerUrl: game.affiliateUrl,
+}));
+
+/**
+ * Create initials used when a game image fails to load.
+ *
+ * Example:
+ * "Mobile Legends" => "ML"
+ */
+function getInitials(value: string): string {
   return value
     .split(" ")
     .filter(Boolean)
     .slice(0, 2)
-    .map((word) =>
-      word.charAt(0),
-    )
+    .map((word) => word.charAt(0))
     .join("")
     .toUpperCase();
 }
 
+/**
+ * Small arrow icon.
+ */
 function ArrowIcon() {
   return (
     <svg
@@ -67,6 +75,9 @@ function ArrowIcon() {
   );
 }
 
+/**
+ * Search icon.
+ */
 function SearchIcon() {
   return (
     <svg
@@ -92,20 +103,19 @@ function SearchIcon() {
   );
 }
 
-function GameImage({
-  game,
-}: GameImageProps) {
-  const [
-    hasError,
-    setHasError,
-  ] = useState(false);
+/**
+ * Game image with fallback.
+ *
+ * If the image cannot load, we show the
+ * first letters of the game name instead.
+ */
+function GameImage({ game }: GameImageProps) {
+  const [hasError, setHasError] = useState(false);
 
   if (hasError) {
     return (
       <div
-        className={
-          styles.imageFallback
-        }
+        className={styles.imageFallback}
         aria-hidden="true"
       >
         {getInitials(game.name)}
@@ -118,118 +128,85 @@ function GameImage({
       src={game.image}
       alt={game.name}
       className={styles.gameImage}
-      onError={() =>
-        setHasError(true)
-      }
+      onError={() => setHasError(true)}
     />
   );
 }
 
+/**
+ * Main betting games page.
+ */
 export default function BettingGamesPage() {
-  const [
-    category,
-    setCategory,
-  ] =
-    useState<CategoryFilter>(
-      "all",
-    );
+  /**
+   * Current selected category:
+   *
+   * all
+   * esports
+   * sports
+   */
+  const [category, setCategory] =
+    useState<CategoryFilter>("all");
 
-  const [
-    search,
-    setSearch,
-  ] = useState("");
+  /**
+   * Search input.
+   */
+  const [search, setSearch] = useState("");
 
-  const filteredGames = useMemo(
-    () => {
-      const normalizedSearch =
-        search
-          .trim()
-          .toLowerCase();
+  /**
+   * Filter games whenever category
+   * or search value changes.
+   */
+  const filteredGames = useMemo(() => {
+    const normalizedSearch = search
+      .trim()
+      .toLowerCase();
 
-      return bettingGames.filter(
-        (game) => {
-          const matchesCategory =
-            category === "all" ||
-            game.category ===
-              category;
+    return bettingGames.filter((game) => {
+      const matchesCategory =
+        category === "all" ||
+        game.category === category;
 
-          const matchesSearch =
-            normalizedSearch.length ===
-              0 ||
-            game.name
-              .toLowerCase()
-              .includes(
-                normalizedSearch,
-              ) ||
-            game.description
-              .toLowerCase()
-              .includes(
-                normalizedSearch,
-              );
+      const matchesSearch =
+        normalizedSearch.length === 0 ||
+        game.name
+          .toLowerCase()
+          .includes(normalizedSearch) ||
+        game.description
+          .toLowerCase()
+          .includes(normalizedSearch);
 
-          return (
-            matchesCategory &&
-            matchesSearch
-          );
-        },
-      );
-    },
-    [category, search],
-  );
+      return matchesCategory && matchesSearch;
+    });
+  }, [category, search]);
 
   return (
-    <main
-      className={
-        styles.bettingPage
-      }
-    >
-      <section
-        className={
-          styles.pageHero
-        }
-      >
-        <div
-          className={
-            styles.pageContainer
-          }
-        >
-          <span
-            className={
-              styles.heroEyebrow
-            }
-          >
+    <main className={styles.bettingPage}>
+      {/* ============================= */}
+      {/* Hero */}
+      {/* ============================= */}
+
+      <section className={styles.pageHero}>
+        <div className={styles.pageContainer}>
+          <span className={styles.heroEyebrow}>
             Partner platform
           </span>
 
-          <h1>
-            Games and Sports
-          </h1>
+          <h1>Games and Sports</h1>
 
           <p>
-            Browse available esports
-            and sports categories. Final
-            availability, markets, odds,
-            registration, and wagers are
-            provided by the external
-            partner website.
+            Browse available esports and sports categories.
+            Final availability, markets, odds, registration,
+            and wagers are provided by the external partner
+            website.
           </p>
 
-          <div
-            className={
-              styles.heroActions
-            }
-          >
+          <div className={styles.heroActions}>
             <a
-              href={
-                bettingConfig.registerUrl
-              }
+              href={bettingConfig.registerUrl}
               target="_blank"
               rel="noopener noreferrer sponsored"
             >
-              Register with{" "}
-              {
-                bettingConfig.promoCode
-              }
+              Register with {bettingConfig.promoCode}
 
               <ArrowIcon />
             </a>
@@ -241,26 +218,16 @@ export default function BettingGamesPage() {
         </div>
       </section>
 
-      <section
-        className={
-          styles.catalogSection
-        }
-      >
-        <div
-          className={
-            styles.pageContainer
-          }
-        >
-          <div
-            className={
-              styles.toolbar
-            }
-          >
-            <div
-              className={
-                styles.categoryFilters
-              }
-            >
+      {/* ============================= */}
+      {/* Games catalog */}
+      {/* ============================= */}
+
+      <section className={styles.catalogSection}>
+        <div className={styles.pageContainer}>
+          {/* Filters */}
+
+          <div className={styles.toolbar}>
+            <div className={styles.categoryFilters}>
               <button
                 type="button"
                 className={
@@ -268,9 +235,7 @@ export default function BettingGamesPage() {
                     ? styles.activeFilter
                     : ""
                 }
-                onClick={() =>
-                  setCategory("all")
-                }
+                onClick={() => setCategory("all")}
               >
                 All
               </button>
@@ -278,15 +243,12 @@ export default function BettingGamesPage() {
               <button
                 type="button"
                 className={
-                  category ===
-                  "esports"
+                  category === "esports"
                     ? styles.activeFilter
                     : ""
                 }
                 onClick={() =>
-                  setCategory(
-                    "esports",
-                  )
+                  setCategory("esports")
                 }
               >
                 Esports
@@ -295,26 +257,21 @@ export default function BettingGamesPage() {
               <button
                 type="button"
                 className={
-                  category ===
-                  "sports"
+                  category === "sports"
                     ? styles.activeFilter
                     : ""
                 }
                 onClick={() =>
-                  setCategory(
-                    "sports",
-                  )
+                  setCategory("sports")
                 }
               >
                 Sports
               </button>
             </div>
 
-            <label
-              className={
-                styles.searchBox
-              }
-            >
+            {/* Search */}
+
+            <label className={styles.searchBox}>
               <SearchIcon />
 
               <input
@@ -322,117 +279,82 @@ export default function BettingGamesPage() {
                 value={search}
                 placeholder="Search games or sports"
                 onChange={(event) =>
-                  setSearch(
-                    event.target.value,
-                  )
+                  setSearch(event.target.value)
                 }
               />
             </label>
           </div>
 
-          <div
-            className={
-              styles.resultHeader
-            }
-          >
+          {/* Result header */}
+
+          <div className={styles.resultHeader}>
             <div>
-              <h2>
-                Available Categories
-              </h2>
+              <h2>Available Categories</h2>
 
               <p>
-                Select a category to
-                continue to the partner
-                website.
+                Select a category to continue to the
+                partner website.
               </p>
             </div>
 
             <span>
-              {filteredGames.length}{" "}
-              results
+              {filteredGames.length} results
             </span>
           </div>
 
-          {filteredGames.length >
-          0 ? (
-            <div
-              className={
-                styles.gameGrid
-              }
-            >
-              {filteredGames.map(
-                (game) => (
-                  <article
-                    key={game.id}
-                    className={
-                      styles.gameCard
-                    }
+          {/* ============================= */}
+          {/* Games */}
+          {/* ============================= */}
+
+          {filteredGames.length > 0 ? (
+            <div className={styles.gameGrid}>
+              {filteredGames.map((game) => (
+                <article
+                  key={game.id}
+                  className={styles.gameCard}
+                >
+                  <div
+                    className={styles.gameImageWrapper}
                   >
-                    <div
-                      className={
-                        styles.gameImageWrapper
-                      }
+                    <GameImage game={game} />
+
+                    <span
+                      className={styles.categoryBadge}
                     >
-                      <GameImage
-                        game={game}
-                      />
+                      {game.category === "esports"
+                        ? "Esports"
+                        : "Sports"}
+                    </span>
+                  </div>
 
-                      <span
-                        className={
-                          styles.categoryBadge
-                        }
-                      >
-                        {game.category ===
-                        "esports"
-                          ? "Esports"
-                          : "Sports"}
-                      </span>
-                    </div>
+                  <div className={styles.gameContent}>
+                    <h3>{game.name}</h3>
 
-                    <div
-                      className={
-                        styles.gameContent
-                      }
+                    <p>{game.description}</p>
+
+                    <a
+                      href={game.partnerUrl}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
                     >
-                      <h3>
-                        {game.name}
-                      </h3>
+                      View on partner site
 
-                      <p>
-                        {
-                          game.description
-                        }
-                      </p>
-
-                      <a
-                        href={
-                          game.partnerUrl
-                        }
-                        target="_blank"
-                        rel="noopener noreferrer sponsored"
-                      >
-                        View on partner site
-
-                        <ArrowIcon />
-                      </a>
-                    </div>
-                  </article>
-                ),
-              )}
+                      <ArrowIcon />
+                    </a>
+                  </div>
+                </article>
+              ))}
             </div>
           ) : (
-            <div
-              className={
-                styles.emptyState
-              }
-            >
-              <h2>
-                No results found
-              </h2>
+            /* ============================= */
+            /* Empty state */
+            /* ============================= */
+
+            <div className={styles.emptyState}>
+              <h2>No results found</h2>
 
               <p>
-                Try another search or
-                select a different
+                Try another search or select a different
                 category.
               </p>
 
@@ -448,20 +370,18 @@ export default function BettingGamesPage() {
             </div>
           )}
 
-          <div
-            className={
-              styles.disclaimer
-            }
-          >
+          {/* ============================= */}
+          {/* Disclaimer */}
+          {/* ============================= */}
+
+          <div className={styles.disclaimer}>
             <strong>18+</strong>
 
             <p>
-              This website only provides
-              information and an affiliate
-              link. It does not accept,
-              process, or settle bets.
-              Check local laws and play
-              responsibly.
+              This website only provides information and
+              an affiliate link. It does not accept,
+              process, or settle bets. Check local laws
+              and play responsibly.
             </p>
           </div>
         </div>
