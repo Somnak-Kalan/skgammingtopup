@@ -1,20 +1,24 @@
-import PromotionPage from '../../app/promotions/page'
-import GameListCard from '../../app/games/gameList/page'
 import SocialMediaCard from "@/components/home/SocialMediaCard";
 import SupportCard from "@/components/home/SupportCard";
 import EsportsBettingCard from "@/components/home/EsportsBettingCard";
-import BettingGamesCard from "@/components/home/BettingGamesCard";
+
+import GamesPageClient from "@/components/games/GamesPageClient";
+import PromotionsPageClient from "@/components/promotions/PromotionsPageClient";
+
+import { promotions } from "@/data/promotions";
 
 export default function MainPage() {
-
   return (
     <>
-    <SocialMediaCard/>
-    <PromotionPage/>
-    <GameListCard/>
-    <SupportCard/>
-    {/* <BettingGamesCard/> */}
-    <EsportsBettingCard/>
+      <SocialMediaCard />
+
+      <PromotionsPageClient promotions={promotions} />
+
+      <GamesPageClient />
+
+      <SupportCard />
+
+      <EsportsBettingCard />
     </>
   );
 }
