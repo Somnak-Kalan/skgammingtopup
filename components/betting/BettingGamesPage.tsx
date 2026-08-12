@@ -7,9 +7,7 @@ import {
   bettingGames as rawBettingGames,
 } from "@/data/betting";
 
-import type {
-  BettingGame as RawBettingGame,
-} from "@/data/betting";
+import type { BettingGame as RawBettingGame } from "@/data/betting";
 
 import styles from "@/styles/BettingGamesPage.module.css";
 
@@ -27,10 +25,6 @@ interface GameImageProps {
   game: BettingGame;
 }
 
-/**
- * Convert the original betting data into the format
- * required by this page.
- */
 const bettingGames: BettingGame[] = rawBettingGames.map((game) => ({
   ...game,
   category: "esports",
@@ -38,12 +32,6 @@ const bettingGames: BettingGame[] = rawBettingGames.map((game) => ({
   partnerUrl: game.affiliateUrl,
 }));
 
-/**
- * Create initials used when a game image fails to load.
- *
- * Example:
- * "Mobile Legends" => "ML"
- */
 function getInitials(value: string): string {
   return value
     .split(" ")
@@ -54,9 +42,6 @@ function getInitials(value: string): string {
     .toUpperCase();
 }
 
-/**
- * Small arrow icon.
- */
 function ArrowIcon() {
   return (
     <svg
@@ -75,9 +60,6 @@ function ArrowIcon() {
   );
 }
 
-/**
- * Search icon.
- */
 function SearchIcon() {
   return (
     <svg
@@ -103,12 +85,6 @@ function SearchIcon() {
   );
 }
 
-/**
- * Game image with fallback.
- *
- * If the image cannot load, we show the
- * first letters of the game name instead.
- */
 function GameImage({ game }: GameImageProps) {
   const [hasError, setHasError] = useState(false);
 
@@ -133,29 +109,12 @@ function GameImage({ game }: GameImageProps) {
   );
 }
 
-/**
- * Main betting games page.
- */
 export default function BettingGamesPage() {
-  /**
-   * Current selected category:
-   *
-   * all
-   * esports
-   * sports
-   */
   const [category, setCategory] =
     useState<CategoryFilter>("all");
 
-  /**
-   * Search input.
-   */
   const [search, setSearch] = useState("");
 
-  /**
-   * Filter games whenever category
-   * or search value changes.
-   */
   const filteredGames = useMemo(() => {
     const normalizedSearch = search
       .trim()
@@ -181,10 +140,6 @@ export default function BettingGamesPage() {
 
   return (
     <main className={styles.bettingPage}>
-      {/* ============================= */}
-      {/* Hero */}
-      {/* ============================= */}
-
       <section className={styles.pageHero}>
         <div className={styles.pageContainer}>
           <span className={styles.heroEyebrow}>
@@ -207,25 +162,16 @@ export default function BettingGamesPage() {
               rel="noopener noreferrer sponsored"
             >
               Register with {bettingConfig.promoCode}
-
               <ArrowIcon />
             </a>
 
-            <span>
-              18+ · Play responsibly
-            </span>
+            <span>18+ · Play responsibly</span>
           </div>
         </div>
       </section>
 
-      {/* ============================= */}
-      {/* Games catalog */}
-      {/* ============================= */}
-
       <section className={styles.catalogSection}>
         <div className={styles.pageContainer}>
-          {/* Filters */}
-
           <div className={styles.toolbar}>
             <div className={styles.categoryFilters}>
               <button
@@ -247,9 +193,7 @@ export default function BettingGamesPage() {
                     ? styles.activeFilter
                     : ""
                 }
-                onClick={() =>
-                  setCategory("esports")
-                }
+                onClick={() => setCategory("esports")}
               >
                 Esports
               </button>
@@ -261,15 +205,11 @@ export default function BettingGamesPage() {
                     ? styles.activeFilter
                     : ""
                 }
-                onClick={() =>
-                  setCategory("sports")
-                }
+                onClick={() => setCategory("sports")}
               >
                 Sports
               </button>
             </div>
-
-            {/* Search */}
 
             <label className={styles.searchBox}>
               <SearchIcon />
@@ -285,26 +225,18 @@ export default function BettingGamesPage() {
             </label>
           </div>
 
-          {/* Result header */}
-
           <div className={styles.resultHeader}>
             <div>
               <h2>Available Categories</h2>
 
               <p>
-                Select a category to continue to the
-                partner website.
+                Select a category to continue to the partner
+                website.
               </p>
             </div>
 
-            <span>
-              {filteredGames.length} results
-            </span>
+            <span>{filteredGames.length} results</span>
           </div>
-
-          {/* ============================= */}
-          {/* Games */}
-          {/* ============================= */}
 
           {filteredGames.length > 0 ? (
             <div className={styles.gameGrid}>
@@ -313,14 +245,10 @@ export default function BettingGamesPage() {
                   key={game.id}
                   className={styles.gameCard}
                 >
-                  <div
-                    className={styles.gameImageWrapper}
-                  >
+                  <div className={styles.gameImageWrapper}>
                     <GameImage game={game} />
 
-                    <span
-                      className={styles.categoryBadge}
-                    >
+                    <span className={styles.categoryBadge}>
                       {game.category === "esports"
                         ? "Esports"
                         : "Sports"}
@@ -338,7 +266,6 @@ export default function BettingGamesPage() {
                       rel="noopener noreferrer sponsored"
                     >
                       View on partner site
-
                       <ArrowIcon />
                     </a>
                   </div>
@@ -346,10 +273,6 @@ export default function BettingGamesPage() {
               ))}
             </div>
           ) : (
-            /* ============================= */
-            /* Empty state */
-            /* ============================= */
-
             <div className={styles.emptyState}>
               <h2>No results found</h2>
 
@@ -370,18 +293,14 @@ export default function BettingGamesPage() {
             </div>
           )}
 
-          {/* ============================= */}
-          {/* Disclaimer */}
-          {/* ============================= */}
-
           <div className={styles.disclaimer}>
             <strong>18+</strong>
 
             <p>
-              This website only provides information and
-              an affiliate link. It does not accept,
-              process, or settle bets. Check local laws
-              and play responsibly.
+              This website only provides information and an
+              affiliate link. It does not accept, process, or
+              settle bets. Check local laws and play
+              responsibly.
             </p>
           </div>
         </div>
