@@ -1,0 +1,288 @@
+.bettingSection {
+  width: 100%;
+  padding: 30px 0;
+  background: #13181b;
+}
+
+.bettingContainer {
+  width: min(
+    calc(100% - 48px),
+    1500px
+  );
+  margin: 0 auto;
+  padding: 22px;
+  background: #202629;
+  border: 1px solid
+    rgba(255, 255, 255, 0.06);
+  border-radius: 17px;
+}
+
+.sectionHeader {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.sectionEyebrow {
+  display: block;
+  margin-bottom: 5px;
+  color: #24b8f5;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.sectionHeader h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.seeMoreLink {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  min-height: 36px;
+  padding: 0 12px;
+  color: #24b8f5;
+  font-size: 11px;
+  font-weight: 750;
+  text-decoration: none;
+  background: rgba(
+    36,
+    184,
+    245,
+    0.09
+  );
+  border: 1px solid
+    rgba(
+      36,
+      184,
+      245,
+      0.18
+    );
+  border-radius: 7px;
+}
+
+.seeMoreLink:hover {
+  color: #ffffff;
+  background: #1da9e6;
+}
+
+.seeMoreLink svg {
+  width: 16px;
+  height: 16px;
+}
+
+.compactGameList {
+  display: grid;
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.compactGameCard {
+  display: grid;
+  grid-template-columns:
+    68px minmax(0, 1fr);
+  gap: 13px;
+  align-items: center;
+  min-width: 0;
+  min-height: 104px;
+  padding: 13px;
+  color: #ffffff;
+  text-decoration: none;
+  background: #282e31;
+  border: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+  border-radius: 12px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.compactGameCard:hover {
+  background: #2d3539;
+  border-color: #25b7f2;
+  transform: translateY(-2px);
+}
+
+.disabledCard {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
+.disabledCard:hover {
+  background: #282e31;
+  border-color: rgba(
+    255,
+    255,
+    255,
+    0.07
+  );
+  transform: none;
+}
+
+.gameImageWrapper {
+  width: 68px;
+  height: 68px;
+  overflow: hidden;
+  background: #111719;
+  border-radius: 13px;
+}
+
+.gameImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gameImageFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 900;
+  background:
+    linear-gradient(
+      135deg,
+      #2381b8,
+      #27b7ee
+    );
+}
+
+.gameInformation {
+  min-width: 0;
+}
+
+.gameInformation h3 {
+  overflow: hidden;
+  margin: 0;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 750;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.availableStatus,
+.comingSoonStatus {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.availableStatus {
+  color: #9bd832;
+}
+
+.comingSoonStatus {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.38
+  );
+}
+
+.bottomNotice {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+}
+
+.bottomNotice > span {
+  display: inline-flex;
+  flex: 0 0 30px;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: #211a08;
+  font-size: 10px;
+  font-weight: 900;
+  background: #ffbd36;
+  border-radius: 50%;
+}
+
+.bottomNotice p {
+  margin: 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.38
+  );
+  font-size: 10px;
+}
+
+@media (max-width: 1200px) {
+  .compactGameList {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .compactGameList {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .bettingSection {
+    padding: 22px 0;
+  }
+
+  .bettingContainer {
+    width: calc(100% - 22px);
+    padding: 16px 12px;
+  }
+
+  .sectionHeader {
+    align-items: flex-start;
+  }
+
+  .sectionHeader h2 {
+    font-size: 18px;
+  }
+
+  .compactGameList {
+    grid-template-columns: 1fr;
+  }
+
+  .compactGameCard {
+    min-height: 94px;
+  }
+
+  .gameImageWrapper {
+    width: 62px;
+    height: 62px;
+  }
+}

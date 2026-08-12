@@ -1,0 +1,960 @@
+.betSection {
+  width: 100%;
+  padding: 70px 0;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 100%,
+      rgba(69, 131, 255, 0.12),
+      transparent 42%
+    ),
+    #0d172b;
+}
+
+.betCard {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns:
+    350px minmax(0, 1fr);
+  gap: 25px;
+  width: min(
+    calc(100% - 48px),
+    1500px
+  );
+  margin: 0 auto;
+  padding: 28px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(75, 133, 255, 0.16),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(31, 210, 255, 0.08),
+      transparent 28%
+    ),
+    #111d33;
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  box-shadow:
+    0 25px 70px
+      rgba(0, 0, 0, 0.42),
+    0 0 40px
+      rgba(66, 126, 255, 0.14);
+}
+
+/* Animated light around the
+   whole large card */
+.animatedBorder {
+  position: absolute;
+  z-index: -2;
+  inset: -2px;
+  overflow: hidden;
+  pointer-events: none;
+  border-radius: 24px;
+}
+
+.animatedBorder::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180%;
+  height: 180%;
+  content: "";
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 50deg,
+      rgba(70, 135, 255, 0.95)
+        90deg,
+      rgba(52, 220, 255, 0.9)
+        120deg,
+      transparent 165deg,
+      transparent 250deg,
+      rgba(123, 82, 255, 0.85)
+        300deg,
+      transparent 350deg
+    );
+  transform:
+    translate(-50%, -50%)
+    rotate(0deg);
+  animation:
+    rotateCardLight 7s linear
+    infinite;
+}
+
+.animatedBorder::after {
+  position: absolute;
+  inset: 3px;
+  content: "";
+  background: #111d33;
+  border-radius: 20px;
+}
+
+.bottomLight {
+  position: absolute;
+  z-index: -3;
+  right: 8%;
+  bottom: -30px;
+  left: 8%;
+  height: 60px;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(62, 132, 255, 0.75),
+      rgba(39, 213, 255, 0.25)
+        36%,
+      transparent 72%
+    );
+  filter: blur(17px);
+  opacity: 0.7;
+  animation:
+    bottomGlow 2.7s ease-in-out
+    infinite alternate;
+}
+
+@keyframes rotateCardLight {
+  to {
+    transform:
+      translate(-50%, -50%)
+      rotate(360deg);
+  }
+}
+
+@keyframes bottomGlow {
+  from {
+    opacity: 0.42;
+    transform: scaleX(0.82);
+  }
+
+  to {
+    opacity: 0.95;
+    transform: scaleX(1.08);
+  }
+}
+
+/* =========================
+   LEFT INTRODUCTION
+========================= */
+
+.betIntroduction {
+  position: relative;
+  z-index: 2;
+  padding: 10px 5px 10px 0;
+}
+
+.betEyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 27px;
+  margin-bottom: 13px;
+  padding: 0 10px;
+  color: #081326;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  background: #5a91ff;
+  border-radius: 6px;
+}
+
+.betIntroduction h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 850;
+  line-height: 1.2;
+}
+
+.betIntroduction > p {
+  margin: 15px 0 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.55
+  );
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* =========================
+   PROMO CODE
+========================= */
+
+.promoCodeBox {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 27px;
+  padding: 15px;
+  background: #182641;
+  border: 1px dashed
+    rgba(90, 145, 255, 0.5);
+  border-radius: 11px;
+}
+
+.promoCodeBox > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.promoCodeBox span {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.4
+  );
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.promoCodeBox strong {
+  margin-top: 6px;
+  color: #6c9eff;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+.promoCodeBox button {
+  display: inline-flex;
+  gap: 7px;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 12px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  background: rgba(
+    90,
+    145,
+    255,
+    0.14
+  );
+  border: 1px solid
+    rgba(
+      90,
+      145,
+      255,
+      0.28
+    );
+  border-radius: 7px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.promoCodeBox button:hover {
+  background: rgba(
+    90,
+    145,
+    255,
+    0.25
+  );
+  border-color: rgba(
+    90,
+    145,
+    255,
+    0.55
+  );
+}
+
+.promoCodeBox button svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* =========================
+   REGISTER BUTTON
+========================= */
+
+.registerButton {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 15px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  background:
+    linear-gradient(
+      135deg,
+      #3978f4,
+      #6096ff
+    );
+  border-radius: 8px;
+  box-shadow:
+    0 12px 25px
+      rgba(57, 120, 244, 0.24);
+  transition:
+    filter 0.2s ease,
+    transform 0.2s ease;
+}
+
+.registerButton:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.registerButton svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* =========================
+   RESPONSIBLE NOTICE
+========================= */
+
+.responsibleNotice {
+  display: grid;
+  grid-template-columns:
+    38px minmax(0, 1fr);
+  gap: 11px;
+  align-items: center;
+  margin-top: 17px;
+  padding: 12px;
+  background: rgba(
+    255,
+    181,
+    42,
+    0.07
+  );
+  border: 1px solid
+    rgba(
+      255,
+      181,
+      42,
+      0.15
+    );
+  border-radius: 9px;
+}
+
+.responsibleNotice strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  color: #211a08;
+  font-size: 12px;
+  background: #ffbd36;
+  border-radius: 50%;
+}
+
+.responsibleNotice p {
+  margin: 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.48
+  );
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+/* =========================
+   RIGHT AREA
+========================= */
+
+.gamesArea {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+}
+
+/* =========================
+   REWARD PROMOTION
+========================= */
+
+.rewardBanner {
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    64px minmax(0, 1fr) 68px;
+  gap: 17px;
+  align-items: center;
+  min-height: 150px;
+  margin-bottom: 22px;
+  padding: 22px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 90% 15%,
+      rgba(255, 216, 84, 0.22),
+      transparent 32%
+    ),
+    linear-gradient(
+      120deg,
+      rgba(36, 72, 143, 0.93),
+      rgba(22, 49, 100, 0.96)
+        50%,
+      rgba(18, 39, 79, 0.97)
+    );
+  border: 1px solid
+    rgba(255, 210, 75, 0.42);
+  border-radius: 17px;
+  box-shadow:
+    0 14px 36px
+      rgba(0, 0, 0, 0.23),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.08);
+}
+
+.rewardBanner::before {
+  position: absolute;
+  top: -120%;
+  left: -30%;
+  width: 28%;
+  height: 340%;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.18),
+      transparent
+    );
+  transform: rotate(24deg);
+  animation:
+    rewardShine 4.8s ease-in-out
+    infinite;
+}
+
+.rewardBanner::after {
+  position: absolute;
+  right: -35px;
+  bottom: -55px;
+  width: 170px;
+  height: 170px;
+  content: "";
+  pointer-events: none;
+  background: rgba(
+    255,
+    204,
+    64,
+    0.1
+  );
+  border-radius: 50%;
+  filter: blur(4px);
+}
+
+@keyframes rewardShine {
+  0%,
+  45% {
+    left: -35%;
+  }
+
+  70%,
+  100% {
+    left: 125%;
+  }
+}
+
+.rewardIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  color: #231a03;
+  background:
+    linear-gradient(
+      135deg,
+      #ffe277,
+      #ffb52e
+    );
+  border-radius: 17px;
+  box-shadow:
+    0 10px 24px
+      rgba(255, 183, 45, 0.24);
+}
+
+.rewardIcon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.rewardContent {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.rewardLabel {
+  color: #ffcf4a;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.rewardContent h3 {
+  max-width: 720px;
+  margin: 7px 0 0;
+  color: #ffffff;
+  font-size: clamp(
+    20px,
+    2.1vw,
+    29px
+  );
+  font-weight: 900;
+  line-height: 1.18;
+}
+
+.rewardContent p {
+  margin: 9px 0 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.65
+  );
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.rewardWarning {
+  margin-top: 7px;
+  color: rgba(
+    255,
+    220,
+    112,
+    0.78
+  );
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.rewardMoneyIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  color: rgba(
+    255,
+    214,
+    83,
+    0.75
+  );
+  animation:
+    moneyFloat 2.4s ease-in-out
+    infinite;
+}
+
+.rewardMoneyIcon svg {
+  width: 55px;
+  height: 55px;
+}
+
+@keyframes moneyFloat {
+  0%,
+  100% {
+    transform: translateY(0)
+      rotate(-4deg);
+  }
+
+  50% {
+    transform: translateY(-8px)
+      rotate(4deg);
+  }
+}
+
+/* =========================
+   GAME HEADER
+========================= */
+
+.gamesHeader {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.gamesHeader > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.gamesHeader span {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.4
+  );
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.gamesHeader h3 {
+  margin: 5px 0 0;
+  color: #ffffff;
+  font-size: 19px;
+}
+
+.viewAllButton {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 39px;
+  padding: 0 14px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 750;
+  text-decoration: none;
+  background: rgba(
+    90,
+    145,
+    255,
+    0.14
+  );
+  border: 1px solid
+    rgba(
+      90,
+      145,
+      255,
+      0.28
+    );
+  border-radius: 7px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.viewAllButton:hover {
+  background: #4f86f7;
+  transform: translateY(-1px);
+}
+
+.viewAllButton svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* =========================
+   SMALL GAME CARDS
+========================= */
+
+.gamesGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.smallGameCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-width: 0;
+  min-height: 86px;
+  padding: 12px 14px;
+  color: #ffffff;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.06
+  );
+  border: 1px solid
+    rgba(90, 145, 255, 0.55);
+  border-radius: 14px;
+  box-shadow:
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.04),
+    0 8px 20px
+      rgba(0, 0, 0, 0.14);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.smallGameCard:hover:not(:disabled) {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.09
+  );
+  border-color: #5a91ff;
+  box-shadow:
+    0 12px 24px
+      rgba(0, 0, 0, 0.22);
+  transform: translateY(-2px);
+}
+
+.smallGameCard:focus-visible {
+  outline: 3px solid
+    rgba(90, 145, 255, 0.9);
+  outline-offset: 3px;
+}
+
+.smallGameCard:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.smallGameCardLeft {
+  display: flex;
+  flex: 1;
+  gap: 12px;
+  align-items: center;
+  min-width: 0;
+}
+
+.smallGameCardImageBox {
+  display: inline-flex;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.92
+  );
+  border-radius: 12px;
+}
+
+.gameIconImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gameIconFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 900;
+  background:
+    linear-gradient(
+      135deg,
+      #315ca9,
+      #5a91ff
+    );
+}
+
+.smallGameCardText {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.smallGameCardText strong {
+  overflow: hidden;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.smallGameCardText small {
+  overflow: hidden;
+  margin-top: 4px;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.55
+  );
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.smallGameCardRight {
+  display: inline-flex;
+  flex: 0 0 24px;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: #5a91ff;
+}
+
+.smallGameCardRight svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1250px) {
+  .gamesGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1050px) {
+  .betCard {
+    grid-template-columns: 1fr;
+  }
+
+  .betIntroduction {
+    padding-right: 0;
+  }
+
+  .gamesGrid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .gamesGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .rewardBanner {
+    grid-template-columns:
+      58px minmax(0, 1fr);
+  }
+
+  .rewardIcon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .rewardMoneyIcon {
+    display: none;
+  }
+}
+
+@media (max-width: 590px) {
+  .betSection {
+    padding: 45px 0;
+  }
+
+  .betCard {
+    width: calc(100% - 22px);
+    gap: 22px;
+    padding: 21px 14px;
+  }
+
+  .betIntroduction h2 {
+    font-size: 24px;
+  }
+
+  .rewardBanner {
+    grid-template-columns: 1fr;
+    padding: 18px;
+  }
+
+  .rewardIcon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .rewardIcon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .rewardContent h3 {
+    font-size: 21px;
+  }
+
+  .gamesHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .viewAllButton {
+    min-height: 36px;
+    padding: 0 11px;
+  }
+
+  .gamesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .smallGameCard {
+    min-height: 78px;
+    padding: 11px 12px;
+  }
+
+  .smallGameCardImageBox {
+    flex-basis: 44px;
+    width: 44px;
+    height: 44px;
+  }
+
+  .smallGameCardText strong {
+    font-size: 13px;
+  }
+
+  .smallGameCardText small {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .betCard {
+    width: calc(100% - 16px);
+    padding: 18px 10px;
+  }
+
+  .promoCodeBox {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .promoCodeBox button {
+    justify-content: center;
+  }
+
+  .viewAllButton {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+    reduce
+) {
+  .animatedBorder::before,
+  .bottomLight,
+  .rewardBanner::before,
+  .rewardMoneyIcon {
+    animation: none;
+  }
+}

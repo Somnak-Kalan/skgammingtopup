@@ -1,0 +1,605 @@
+.supportSection {
+  width: 100%;
+  padding: 45px 0;
+  background: #13181b;
+}
+
+.supportCard {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    430px;
+  gap: 25px;
+  width: min(
+    calc(100% - 48px),
+    1500px
+  );
+  margin: 0 auto;
+  padding: 32px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(36, 184, 245, 0.09),
+      transparent 35%
+    ),
+    #202629;
+  border: 1px solid
+    rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  box-shadow:
+    0 20px 45px
+      rgba(0, 0, 0, 0.2);
+}
+
+.supportIntroduction {
+  min-width: 0;
+  padding: 8px 8px 8px 0;
+}
+
+.supportEyebrow {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #23b8f5;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.supportTitleRow {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+.heartIcon {
+  display: inline-flex;
+  flex: 0 0 47px;
+  align-items: center;
+  justify-content: center;
+  width: 47px;
+  height: 47px;
+  color: #ff5267;
+  background: rgba(
+    255,
+    82,
+    103,
+    0.12
+  );
+  border: 1px solid
+    rgba(
+      255,
+      82,
+      103,
+      0.2
+    );
+  border-radius: 13px;
+}
+
+.heartIcon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.supportTitleRow h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.supportDescription {
+  max-width: 770px;
+  margin: 16px 0 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.51
+  );
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.paymentMethods {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.paymentMethod {
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    47px minmax(0, 1fr)
+    22px;
+  gap: 11px;
+  align-items: center;
+  min-width: 0;
+  min-height: 77px;
+  padding: 12px;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.72
+  );
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  background: #292f32;
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+  border-radius: 11px;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.paymentMethod:hover {
+  color: #ffffff;
+  background: #2d3437;
+  transform: translateY(-2px);
+}
+
+.paymentMethodActive {
+  color: #ffffff;
+  background: #30383c;
+  border-color: currentColor;
+  box-shadow:
+    0 10px 25px
+      rgba(0, 0, 0, 0.17);
+}
+
+.paymentMethodAba {
+  color: #2875d4;
+}
+
+.paymentMethodAcleda {
+  color: #1cace4;
+}
+
+.paymentMethodWing {
+  color: #f2c800;
+}
+
+.paymentLogo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 47px;
+  height: 47px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+  background: currentColor;
+  border-radius: 11px;
+}
+
+.paymentMethod > span:nth-child(2) {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.paymentMethod strong {
+  overflow: hidden;
+  color: #ffffff;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.paymentMethod small {
+  margin-top: 5px;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.38
+  );
+  font-size: 10px;
+}
+
+.selectedCheck {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+}
+
+.selectedCheck svg {
+  width: 20px;
+  height: 20px;
+}
+
+.accountInformation {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.accountRow {
+  padding: 16px;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.035
+  );
+  border: 1px solid
+    rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+}
+
+.accountRow > span {
+  display: block;
+  margin-bottom: 8px;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.39
+  );
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.accountRow > div {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accountRow strong {
+  overflow: hidden;
+  color: #f5f5f5;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.accountRow button {
+  display: inline-flex;
+  flex: 0 0 31px;
+  align-items: center;
+  justify-content: center;
+  width: 31px;
+  height: 31px;
+  padding: 0;
+  color: #22b5f2;
+  cursor: pointer;
+  background: rgba(
+    34,
+    181,
+    242,
+    0.09
+  );
+  border: 1px solid
+    rgba(
+      34,
+      181,
+      242,
+      0.18
+    );
+  border-radius: 7px;
+}
+
+.accountRow button:hover {
+  color: #ffffff;
+  background: #22aeea;
+}
+
+.accountRow button svg {
+  width: 17px;
+  height: 17px;
+}
+
+.qrCodeSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  background:
+    linear-gradient(
+      160deg,
+      #2a3033,
+      #23292c
+    );
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+  border-radius: 15px;
+}
+
+.qrHeader {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.qrHeader > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.qrHeader div span {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.38
+  );
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.qrHeader div strong {
+  margin-top: 5px;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+.qrBankBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 57px;
+  height: 35px;
+  padding: 0 9px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+  border-radius: 8px;
+}
+
+.qrBankBadgeAba {
+  background: #2875d4;
+}
+
+.qrBankBadgeAcleda {
+  background: #159fd3;
+}
+
+.qrBankBadgeWing {
+  color: #222222;
+  background: #f3cc00;
+}
+
+.qrImageWrapper {
+  position: relative;
+  width: min(
+    100%,
+    270px
+  );
+  aspect-ratio: 1;
+  padding: 13px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow:
+    0 16px 38px
+      rgba(0, 0, 0, 0.28);
+}
+
+.qrImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.qrCornerTopLeft,
+.qrCornerTopRight,
+.qrCornerBottomLeft,
+.qrCornerBottomRight {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  border-color: #22aeea;
+  border-style: solid;
+}
+
+.qrCornerTopLeft {
+  top: -5px;
+  left: -5px;
+  border-width: 3px 0 0 3px;
+  border-radius: 8px 0 0;
+}
+
+.qrCornerTopRight {
+  top: -5px;
+  right: -5px;
+  border-width: 3px 3px 0 0;
+  border-radius: 0 8px 0 0;
+}
+
+.qrCornerBottomLeft {
+  bottom: -5px;
+  left: -5px;
+  border-width: 0 0 3px 3px;
+  border-radius: 0 0 0 8px;
+}
+
+.qrCornerBottomRight {
+  right: -5px;
+  bottom: -5px;
+  border-width: 0 3px 3px 0;
+  border-radius: 0 0 8px;
+}
+
+.qrDescription {
+  margin: 20px 0 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.46
+  );
+  font-size: 12px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.secureNotice {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 17px;
+  padding: 12px 13px;
+  background: rgba(
+    34,
+    181,
+    242,
+    0.07
+  );
+  border: 1px solid
+    rgba(
+      34,
+      181,
+      242,
+      0.14
+    );
+  border-radius: 8px;
+}
+
+.secureNotice > span {
+  display: inline-flex;
+  flex: 0 0 19px;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  color: #10222a;
+  font-size: 11px;
+  font-weight: 900;
+  background: #22b5f2;
+  border-radius: 50%;
+}
+
+.secureNotice p {
+  margin: 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.48
+  );
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1050px) {
+  .supportCard {
+    grid-template-columns: 1fr;
+  }
+
+  .qrCodeSection {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .paymentMethods {
+    grid-template-columns: 1fr;
+  }
+
+  .accountInformation {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .supportSection {
+    padding: 27px 0;
+  }
+
+  .supportCard {
+    width: calc(100% - 22px);
+    padding: 21px 14px;
+  }
+
+  .supportTitleRow h2 {
+    font-size: 23px;
+  }
+
+  .qrCodeSection {
+    padding: 21px 15px;
+  }
+
+  .qrImageWrapper {
+    width: min(
+      100%,
+      245px
+    );
+  }
+}
+.paymentLogo {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.paymentLogoImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.paymentDetails {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.paymentDetails strong {
+  display: block;
+}
+
+.paymentDetails small {
+  display: block;
+  opacity: 0.7;
+}
+
+.qrBankBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.qrBankBadgeImage {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  object-fit: contain;
+}
+
+.qrImageWrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.qrImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}

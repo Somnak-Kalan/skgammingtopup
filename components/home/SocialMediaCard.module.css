@@ -1,0 +1,335 @@
+.socialSection {
+  width: 100%;
+  padding: 45px 0;
+  background: #13181b;
+}
+
+.socialCard {
+  width: min(
+    calc(100% - 48px),
+    1500px
+  );
+  margin: 0 auto;
+  padding: 32px;
+  color: #ffffff;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgba(35, 184, 245, 0.12),
+      transparent 34%
+    ),
+    #202629;
+  border: 1px solid
+    rgba(255, 255, 255, 0.05);
+  border-radius: 17px;
+  box-shadow:
+    0 20px 45px
+      rgba(0, 0, 0, 0.2);
+}
+
+.socialCardHeader {
+  display: flex;
+  gap: 35px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  padding-bottom: 27px;
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+.socialCardHeader > div:first-child {
+  max-width: 720px;
+}
+
+.headerEyebrow {
+  display: inline-block;
+  margin-bottom: 9px;
+  color: #23b8f5;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.socialCardHeader h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.socialCardHeader p {
+  max-width: 690px;
+  margin: 10px 0 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.48
+  );
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.headerDecoration {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.headerDecoration span {
+  display: block;
+  width: 9px;
+  background: #23b8f5;
+  border-radius: 999px;
+}
+
+.headerDecoration span:nth-child(1) {
+  height: 25px;
+  opacity: 0.4;
+}
+
+.headerDecoration span:nth-child(2) {
+  height: 43px;
+  opacity: 0.7;
+}
+
+.headerDecoration span:nth-child(3) {
+  height: 61px;
+}
+
+.socialMediaGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.socialMediaItem {
+  position: relative;
+  display: grid;
+  grid-template-columns:
+    55px minmax(0, 1fr)
+    28px;
+  gap: 14px;
+  align-items: center;
+  min-width: 0;
+  min-height: 128px;
+  padding: 18px;
+  overflow: hidden;
+  color: #ffffff;
+  text-decoration: none;
+  background: #292f32;
+  border: 1px solid
+    rgba(255, 255, 255, 0.06);
+  border-radius: 13px;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.socialMediaItem::before {
+  position: absolute;
+  right: -40px;
+  bottom: -65px;
+  width: 125px;
+  height: 125px;
+  content: "";
+  background: currentColor;
+  border-radius: 50%;
+  opacity: 0.055;
+}
+
+.socialMediaItem:hover {
+  border-color: currentColor;
+  box-shadow:
+    0 15px 32px
+      rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+.socialMediaTelegram {
+  color: #28a8e9;
+}
+
+.socialMediaFacebook {
+  color: #3685ed;
+}
+
+.socialMediaTiktok {
+  color: #28e4dd;
+}
+
+.socialMediaYoutube {
+  color: #ff3d3d;
+}
+
+.socialIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  color: #ffffff;
+  background: currentColor;
+  border-radius: 14px;
+  box-shadow:
+    0 10px 25px
+      rgba(0, 0, 0, 0.22);
+}
+
+.socialIcon svg {
+  width: 29px;
+  height: 29px;
+}
+
+.socialInformation {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.socialInformation strong {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.socialInformation small {
+  overflow: hidden;
+  margin-top: 4px;
+  color: currentColor;
+  font-size: 12px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.socialInformation > span {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 9px;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.43
+  );
+  font-size: 11px;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.socialArrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+  transition: transform 0.25s ease;
+}
+
+.socialArrow svg {
+  width: 22px;
+  height: 22px;
+}
+
+.socialMediaItem:hover
+  .socialArrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1150px) {
+  .socialMediaGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .socialSection {
+    padding: 28px 0;
+  }
+
+  .socialCard {
+    width: calc(100% - 22px);
+    padding: 22px 14px;
+  }
+
+  .socialCardHeader {
+    align-items: flex-start;
+  }
+
+  .socialCardHeader h2 {
+    font-size: 23px;
+  }
+
+  .headerDecoration {
+    display: none;
+  }
+
+  .socialMediaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .socialMediaItem {
+    min-height: 112px;
+  }
+}
+
+/* /// */
+.headerDecoration {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  gap: 7px;
+}
+
+.headerDecoration span {
+  display: block;
+  width: 7px;
+  height: 30px;
+
+  border-radius: 999px;
+  background: currentColor;
+
+  animation: decorationMove 1s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* First bar */
+.headerDecoration span:nth-child(1) {
+  height: 24px;
+  animation-delay: 0s;
+}
+
+/* Second bar */
+.headerDecoration span:nth-child(2) {
+  height: 38px;
+  animation-delay: -0.2s;
+}
+
+/* Third bar */
+.headerDecoration span:nth-child(3) {
+  height: 28px;
+  animation-delay: -0.4s;
+}
+
+@keyframes decorationMove {
+  from {
+    transform: translateY(-8px);
+  }
+
+  to {
+    transform: translateY(8px);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .headerDecoration span {
+    animation: none;
+  }
+}

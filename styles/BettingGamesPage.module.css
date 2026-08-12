@@ -1,0 +1,537 @@
+.bettingPage {
+  min-height: 100vh;
+  color: #ffffff;
+  background: #13181b;
+}
+
+.pageContainer {
+  width: min(
+    calc(100% - 48px),
+    1500px
+  );
+  margin: 0 auto;
+}
+
+.pageHero {
+  padding: 74px 0 70px;
+  background:
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(34, 179, 240, 0.18),
+      transparent 36%
+    ),
+    linear-gradient(
+      135deg,
+      #192126,
+      #121719
+    );
+  border-bottom: 1px solid
+    rgba(255, 255, 255, 0.06);
+}
+
+.heroEyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 29px;
+  padding: 0 11px;
+  color: #10212a;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  background: #27b6f1;
+  border-radius: 6px;
+}
+
+.pageHero h1 {
+  margin: 20px 0 0;
+  font-size: clamp(
+    42px,
+    6vw,
+    72px
+  );
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.pageHero p {
+  max-width: 760px;
+  margin: 21px 0 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.54
+  );
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.heroActions {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-top: 29px;
+}
+
+.heroActions a {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 20px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  background:
+    linear-gradient(
+      135deg,
+      #188cd1,
+      #24b8f4
+    );
+  border-radius: 8px;
+}
+
+.heroActions a:hover {
+  filter: brightness(1.08);
+}
+
+.heroActions a svg {
+  width: 18px;
+  height: 18px;
+}
+
+.heroActions > span {
+  color: #ffbd36;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.catalogSection {
+  padding: 42px 0 80px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+  background: #202629;
+  border: 1px solid
+    rgba(255, 255, 255, 0.055);
+  border-radius: 13px;
+}
+
+.categoryFilters {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.categoryFilters button {
+  min-height: 39px;
+  padding: 0 16px;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.58
+  );
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+  border-radius: 7px;
+}
+
+.categoryFilters button:hover {
+  color: #ffffff;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.055
+  );
+}
+
+.categoryFilters
+  .activeFilter {
+  color: #ffffff;
+  background: #1c9ed9;
+  border-color: #28b7f2;
+}
+
+.searchBox {
+  display: grid;
+  grid-template-columns:
+    23px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  width: min(
+    100%,
+    350px
+  );
+  min-height: 43px;
+  padding: 0 14px;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.4
+  );
+  background: #292f32;
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+}
+
+.searchBox:focus-within {
+  color: #28b7f2;
+  border-color: #28b7f2;
+}
+
+.searchBox svg {
+  width: 20px;
+  height: 20px;
+}
+
+.searchBox input {
+  width: 100%;
+  height: 41px;
+  color: #ffffff;
+  font-family: inherit;
+  outline: none;
+  background: transparent;
+  border: 0;
+}
+
+.searchBox input::placeholder {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.3
+  );
+}
+
+.resultHeader {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 38px 0 22px;
+}
+
+.resultHeader h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.resultHeader p {
+  margin: 7px 0 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.43
+  );
+  font-size: 13px;
+}
+
+.resultHeader > span {
+  padding: 8px 12px;
+  color: #28b7f2;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(
+    40,
+    183,
+    242,
+    0.1
+  );
+  border: 1px solid
+    rgba(40, 183, 242, 0.2);
+  border-radius: 7px;
+}
+
+.gameGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.gameCard {
+  min-width: 0;
+  overflow: hidden;
+  background: #202629;
+  border: 1px solid
+    rgba(255, 255, 255, 0.055);
+  border-radius: 14px;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.gameCard:hover {
+  border-color: rgba(
+    40,
+    183,
+    242,
+    0.55
+  );
+  box-shadow:
+    0 17px 35px
+      rgba(0, 0, 0, 0.26);
+  transform: translateY(-5px);
+}
+
+.gameImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.45;
+  overflow: hidden;
+  background: #101619;
+}
+
+.gameImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gameCard:hover
+  .gameImage {
+  transform: scale(1.04);
+}
+
+.imageFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 900;
+  background:
+    linear-gradient(
+      135deg,
+      #226fa3,
+      #25a9dc
+    );
+}
+
+.categoryBadge {
+  position: absolute;
+  top: 11px;
+  left: 11px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 25px;
+  padding: 0 9px;
+  color: #17210d;
+  font-size: 9px;
+  font-weight: 850;
+  text-transform: uppercase;
+  background: #9ed62e;
+  border-radius: 5px;
+}
+
+.gameContent {
+  padding: 18px;
+}
+
+.gameContent h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+.gameContent p {
+  display: -webkit-box;
+  overflow: hidden;
+  min-height: 63px;
+  margin: 12px 0 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.45
+  );
+  font-size: 11px;
+  line-height: 1.65;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.gameContent a {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 19px;
+  color: #29b8f3;
+  font-size: 11px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.gameContent a svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.gameContent a:hover svg {
+  transform: translateX(4px);
+}
+
+.emptyState {
+  display: flex;
+  min-height: 380px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+  text-align: center;
+  background: #202629;
+  border-radius: 14px;
+}
+
+.emptyState h2 {
+  margin: 0;
+}
+
+.emptyState p {
+  margin: 9px 0 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.45
+  );
+}
+
+.emptyState button {
+  min-height: 42px;
+  margin-top: 20px;
+  padding: 0 17px;
+  color: #ffffff;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  background: #1da8e4;
+  border: 0;
+  border-radius: 7px;
+}
+
+.disclaimer {
+  display: grid;
+  grid-template-columns:
+    45px minmax(0, 1fr);
+  gap: 13px;
+  align-items: center;
+  margin-top: 35px;
+  padding: 17px;
+  background: rgba(
+    255,
+    189,
+    54,
+    0.065
+  );
+  border: 1px solid
+    rgba(255, 189, 54, 0.13);
+  border-radius: 10px;
+}
+
+.disclaimer strong {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  color: #201907;
+  background: #ffbd36;
+  border-radius: 50%;
+}
+
+.disclaimer p {
+  margin: 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.46
+  );
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1150px) {
+  .gameGrid {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .searchBox {
+    width: 100%;
+    max-width: none;
+  }
+
+  .gameGrid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .pageContainer {
+    width: calc(100% - 22px);
+  }
+
+  .pageHero {
+    padding: 48px 0;
+  }
+
+  .pageHero h1 {
+    font-size: 42px;
+  }
+
+  .heroActions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .categoryFilters {
+    overflow-x: auto;
+  }
+
+  .categoryFilters button {
+    flex: 0 0 auto;
+  }
+
+  .resultHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .gameGrid {
+    grid-template-columns: 1fr;
+  }
+}

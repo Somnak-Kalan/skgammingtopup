@@ -1,0 +1,1718 @@
+.gamesPage {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  padding: 46px 0 95px;
+  overflow: hidden;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      180deg,
+      #242b2f 0%,
+      #1d2428 52%,
+      #151c20 100%
+    );
+}
+
+/* =====================================
+   PAGE BACKGROUND
+===================================== */
+
+.backgroundCircleOne,
+.backgroundCircleTwo {
+  position: absolute;
+  z-index: -6;
+  pointer-events: none;
+  border: 75px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.026
+    );
+  border-radius: 50%;
+}
+
+.backgroundCircleOne {
+  top: -470px;
+  left: -350px;
+  width: 1050px;
+  height: 1050px;
+}
+
+.backgroundCircleTwo {
+  right: -540px;
+  bottom: -720px;
+  width: 1350px;
+  height: 1350px;
+}
+
+.backgroundGlowOne,
+.backgroundGlowTwo {
+  position: absolute;
+  z-index: -5;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(45px);
+}
+
+.backgroundGlowOne {
+  top: -200px;
+  left: -170px;
+  width: 590px;
+  height: 590px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        31,
+        177,
+        239,
+        0.16
+      ),
+      transparent 68%
+    );
+  animation:
+    backgroundGlowOneMove
+    9s ease-in-out infinite;
+}
+
+.backgroundGlowTwo {
+  right: -260px;
+  bottom: -350px;
+  width: 750px;
+  height: 750px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        105,
+        81,
+        255,
+        0.12
+      ),
+      transparent 68%
+    );
+  animation:
+    backgroundGlowTwoMove
+    10s ease-in-out infinite;
+}
+
+.backgroundLightSweep {
+  position: absolute;
+  z-index: -4;
+  top: -150%;
+  left: -27%;
+  width: 13%;
+  height: 450%;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(
+        68,
+        202,
+        255,
+        0.055
+      ),
+      transparent
+    );
+  transform: rotate(23deg);
+  animation:
+    backgroundSweepMove
+    11s ease-in-out infinite;
+}
+
+.backgroundGrid {
+  position: absolute;
+  z-index: -7;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(
+      rgba(
+        255,
+        255,
+        0.014
+      )
+      1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(
+        255,
+        255,
+        255,
+        0.014
+      )
+      1px,
+      transparent 1px
+    );
+  background-size: 58px 58px;
+  mask-image:
+    linear-gradient(
+      to bottom,
+      #000,
+      transparent 95%
+    );
+}
+
+/* =====================================
+   CONTAINER
+===================================== */
+
+.gamesContainer {
+  position: relative;
+  z-index: 2;
+  width: min(
+    1450px,
+    calc(100% - 60px)
+  );
+  margin: 0 auto;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.gamesHeader {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  gap: 40px;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 38px 40px;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(
+        43,
+        53,
+        59,
+        0.97
+      ),
+      rgba(
+        26,
+        35,
+        40,
+        0.98
+      )
+    );
+  border: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.065
+    );
+  border-radius: 21px;
+  box-shadow:
+    0 24px 60px
+      rgba(0, 0, 0, 0.31);
+}
+
+.headerAnimatedBorder {
+  position: absolute;
+  z-index: 10;
+  inset: 0;
+  padding: 1px;
+  pointer-events: none;
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 65deg,
+      rgba(
+        67,
+        205,
+        255,
+        0.45
+      )
+        100deg,
+      rgba(
+        111,
+        84,
+        255,
+        0.31
+      )
+        150deg,
+      transparent 205deg,
+      transparent 290deg,
+      rgba(
+        59,
+        196,
+        250,
+        0.38
+      )
+        330deg,
+      transparent 360deg
+    );
+  border-radius: inherit;
+  opacity: 0.5;
+
+  -webkit-mask:
+    linear-gradient(
+      #000 0 0
+    )
+    content-box,
+    linear-gradient(
+      #000 0 0
+    );
+
+  -webkit-mask-composite:
+    xor;
+
+  mask-composite: exclude;
+
+  animation:
+    headerBorderRotate
+    10s linear infinite;
+}
+
+.headerGlow {
+  position: absolute;
+  z-index: -1;
+  right: -160px;
+  bottom: -220px;
+  width: 500px;
+  height: 500px;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        39,
+        188,
+        246,
+        0.18
+      ),
+      transparent 68%
+    );
+  border-radius: 50%;
+  filter: blur(26px);
+  animation:
+    headerGlowPulse
+    4.5s ease-in-out infinite;
+}
+
+.headerContent {
+  position: relative;
+  z-index: 3;
+  max-width: 720px;
+}
+
+.headerEyebrow {
+  display: inline-flex;
+  min-height: 30px;
+  gap: 9px;
+  align-items: center;
+  padding: 0 12px;
+  color: #5ed4ff;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  background:
+    rgba(
+      38,
+      174,
+      232,
+      0.1
+    );
+  border: 1px solid
+    rgba(
+      65,
+      198,
+      248,
+      0.18
+    );
+  border-radius: 999px;
+}
+
+.headerEyebrowDot {
+  width: 7px;
+  height: 7px;
+  background: #51cffc;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 4px
+      rgba(
+        81,
+        207,
+        252,
+        0.09
+      ),
+    0 0 12px
+      rgba(
+        81,
+        207,
+        252,
+        0.8
+      );
+  animation:
+    statusPulse
+    1.7s ease-in-out infinite;
+}
+
+.pageTitle {
+  margin: 16px 0 0;
+  color: #ffffff;
+  font-size: clamp(
+    39px,
+    5vw,
+    67px
+  );
+  font-weight: 950;
+  line-height: 1;
+  letter-spacing: -2.4px;
+}
+
+.pageDescription {
+  max-width: 680px;
+  margin: 18px 0 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.54
+  );
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+/* =====================================
+   SUMMARY
+===================================== */
+
+.gameSummary {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  flex: 0 0 auto;
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(115px, 1fr)
+    );
+  gap: 12px;
+}
+
+.summaryItem {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 106px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.032
+    );
+  border: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.065
+    );
+  border-radius: 15px;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.summaryItem:hover {
+  border-color:
+    rgba(
+      65,
+      199,
+      250,
+      0.2
+    );
+  box-shadow:
+    0 14px 30px
+      rgba(0, 0, 0, 0.22),
+    0 0 20px
+      rgba(
+        45,
+        187,
+        241,
+        0.08
+      );
+  transform: translateY(-3px);
+}
+
+.summaryItem strong {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 950;
+  line-height: 1;
+}
+
+.summaryItem > span:last-child {
+  position: relative;
+  z-index: 2;
+  margin-top: 9px;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.43
+  );
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.summaryGlow {
+  position: absolute;
+  z-index: 1;
+  right: 17%;
+  bottom: -23px;
+  left: 17%;
+  height: 46px;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(
+        51,
+        195,
+        250,
+        0.48
+      ),
+      transparent 72%
+    );
+  filter: blur(11px);
+  animation:
+    summaryGlowPulse
+    2.8s ease-in-out infinite;
+}
+
+/* =====================================
+   GAMES SECTION
+===================================== */
+
+.gamesSection {
+  position: relative;
+  margin-top: 35px;
+  padding: 30px;
+  background:
+    rgba(
+      29,
+      37,
+      42,
+      0.9
+    );
+  border: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.05
+    );
+  border-radius: 20px;
+  box-shadow:
+    0 22px 55px
+      rgba(0, 0, 0, 0.25);
+}
+
+.sectionHeader {
+  display: flex;
+  gap: 30px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 23px;
+}
+
+.sectionLabel {
+  display: block;
+  margin-bottom: 7px;
+  color: #51cef9;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  margin: 0;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.8px;
+}
+
+.sectionDescription {
+  margin: 8px 0 0;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.39
+  );
+  font-size: 11px;
+}
+
+.sectionLine {
+  width: min(
+    490px,
+    44%
+  );
+  height: 1px;
+  margin-bottom: 11px;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(
+        58,
+        197,
+        250,
+        0.46
+      ),
+      transparent
+    );
+}
+
+/* =====================================
+   GRID
+===================================== */
+
+.gamesGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+  gap: 16px;
+  scroll-margin-top: 120px;
+}
+
+/* =====================================
+   COMPACT GAME CARD
+===================================== */
+
+.gameCard {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-width: 0;
+  min-height: 165px;
+  grid-template-columns:
+    40% minmax(0, 1fr);
+  overflow: hidden;
+  color: #ffffff;
+  text-decoration: none;
+  background:
+    var(
+      --game-card-background,
+      linear-gradient(
+        135deg,
+        #353a43,
+        #505764
+      )
+    );
+  border: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.09
+    );
+  border-radius: 16px;
+  box-shadow:
+    0 15px 34px
+      rgba(0, 0, 0, 0.25);
+  transform: translateZ(0);
+  transition:
+    border-color 0.28s ease,
+    box-shadow 0.28s ease,
+    filter 0.28s ease,
+    transform 0.24s ease;
+}
+
+.gameCardAvailable {
+  cursor: pointer;
+}
+
+.gameCardAvailable:hover {
+  border-color:
+    rgba(
+      67,
+      205,
+      255,
+      0.6
+    );
+  box-shadow:
+    0 22px 48px
+      rgba(0, 0, 0, 0.37),
+    0 0 27px
+      rgba(
+        47,
+        190,
+        245,
+        0.15
+      );
+  transform:
+    translateY(-6px)
+    scale(1.012);
+}
+
+.gameCardAvailable:active {
+  box-shadow:
+    0 8px 20px
+      rgba(0, 0, 0, 0.32),
+    0 0 18px
+      rgba(
+        49,
+        193,
+        248,
+        0.22
+      );
+  transform:
+    translateY(-1px)
+    scale(0.96);
+}
+
+.gameCardUpcoming {
+  cursor: default;
+  opacity: 0.88;
+}
+
+.gameCardUpcoming:hover {
+  opacity: 0.98;
+  border-color:
+    rgba(
+      239,
+      199,
+      111,
+      0.45
+    );
+  box-shadow:
+    0 21px 44px
+      rgba(0, 0, 0, 0.34),
+    0 0 23px
+      rgba(
+        222,
+        177,
+        85,
+        0.11
+      );
+  transform: translateY(-4px);
+}
+
+/* =====================================
+   CARD IMAGE
+===================================== */
+
+.gameImageWrapper {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  min-height: 165px;
+  overflow: hidden;
+  background: #181e21;
+  border-radius:
+    15px 0 0 15px;
+}
+
+.gameImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    filter 0.4s ease,
+    transform 0.52s ease;
+}
+
+.gameCardAvailable:hover
+  .gameImage {
+  filter:
+    saturate(1.09)
+    brightness(1.06);
+  transform: scale(1.075);
+}
+
+.gameCardUpcoming
+  .gameImage {
+  filter:
+    grayscale(20%)
+    saturate(0.78)
+    brightness(0.75);
+}
+
+.gameCardUpcoming:hover
+  .gameImage {
+  filter:
+    grayscale(7%)
+    saturate(0.91)
+    brightness(0.84);
+  transform: scale(1.05);
+}
+
+.gameImageFallback {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 165px;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 31px;
+  font-weight: 950;
+  letter-spacing: -1px;
+  background:
+    linear-gradient(
+      145deg,
+      #39454c,
+      #171d20
+    );
+}
+
+.gameImageOverlay {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to right,
+      transparent 50%,
+      rgba(
+        16,
+        20,
+        24,
+        0.2
+      )
+        100%
+    );
+}
+
+.upcomingImageOverlay {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+  background:
+    rgba(
+      18,
+      18,
+      17,
+      0.07
+    );
+}
+
+/* =====================================
+   CARD INFORMATION
+===================================== */
+
+.gameInformation {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.gameInformationTop {
+  display: flex;
+  align-items: center;
+}
+
+.statusBadge {
+  display: inline-flex;
+  min-height: 23px;
+  gap: 6px;
+  align-items: center;
+  padding: 0 8px;
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 0.55px;
+  text-transform: uppercase;
+  background:
+    rgba(
+      12,
+      17,
+      21,
+      0.27
+    );
+  border-radius: 999px;
+  backdrop-filter: blur(9px);
+}
+
+.statusBadgeAvailable {
+  color: #72ddff;
+  border: 1px solid
+    rgba(
+      83,
+      210,
+      255,
+      0.24
+    );
+}
+
+.statusBadgeUpcoming {
+  color: #f1d591;
+  border: 1px solid
+    rgba(
+      238,
+      202,
+      113,
+      0.22
+    );
+}
+
+.statusDot {
+  width: 5px;
+  height: 5px;
+  background: currentColor;
+  border-radius: 50%;
+  box-shadow:
+    0 0 8px currentColor;
+}
+
+.statusBadgeAvailable
+  .statusDot {
+  animation:
+    availableStatusPulse
+    1.6s ease-in-out infinite;
+}
+
+.statusBadgeUpcoming
+  .statusDot {
+  animation:
+    upcomingStatusPulse
+    2.4s ease-in-out infinite;
+}
+
+.gameTitle {
+  display: -webkit-box;
+  margin: 13px 0 0;
+  overflow: hidden;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 850;
+  line-height: 1.32;
+  letter-spacing: -0.3px;
+
+  -webkit-box-orient:
+    vertical;
+  -webkit-line-clamp: 2;
+}
+
+.gameMeta {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  margin-top: 11px;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.54
+  );
+  font-size: 10px;
+}
+
+.gameMetaDivider {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.25
+  );
+}
+
+.gameCardFooter {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 13px;
+}
+
+.gameActionText {
+  color: rgba(
+    255,
+    255,
+    255,
+    0.62
+  );
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.55px;
+  text-transform: uppercase;
+}
+
+.gameActionIcon {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background:
+    rgba(
+      12,
+      19,
+      23,
+      0.28
+    );
+  border: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.13
+    );
+  border-radius: 8px;
+  backdrop-filter: blur(9px);
+  transition:
+    background 0.24s ease,
+    box-shadow 0.24s ease,
+    transform 0.24s ease;
+}
+
+.gameActionIcon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.gameCardAvailable:hover
+  .gameActionIcon {
+  background:
+    linear-gradient(
+      135deg,
+      #078fce,
+      #20b9ee
+    );
+  box-shadow:
+    0 8px 20px
+      rgba(
+        20,
+        153,
+        210,
+        0.3
+      ),
+    0 0 16px
+      rgba(
+        48,
+        194,
+        247,
+        0.17
+      );
+  transform:
+    translateX(3px)
+    scale(1.06);
+}
+
+.gameActionIconUpcoming {
+  color: #edd391;
+}
+
+/* =====================================
+   CARD LIGHTING
+===================================== */
+
+.cardAnimatedBorder {
+  position: absolute;
+  z-index: 20;
+  inset: 0;
+  padding: 1.5px;
+  pointer-events: none;
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent 0deg,
+      transparent 50deg,
+      rgba(
+        67,
+        207,
+        255,
+        0.1
+      )
+        76deg,
+      rgba(
+        77,
+        218,
+        255,
+        0.94
+      )
+        108deg,
+      rgba(
+        112,
+        92,
+        255,
+        0.65
+      )
+        151deg,
+      transparent 196deg,
+      transparent 282deg,
+      rgba(
+        59,
+        196,
+        250,
+        0.72
+      )
+        328deg,
+      transparent 360deg
+    );
+  border-radius: inherit;
+  opacity: 0;
+
+  -webkit-mask:
+    linear-gradient(
+      #000 0 0
+    )
+    content-box,
+    linear-gradient(
+      #000 0 0
+    );
+
+  -webkit-mask-composite:
+    xor;
+
+  mask-composite: exclude;
+}
+
+.gameCardAvailable:hover
+  .cardAnimatedBorder {
+  opacity: 1;
+  animation:
+    cardBorderRotate
+    3s linear infinite;
+}
+
+.gameCardUpcoming:hover
+  .cardAnimatedBorder {
+  background:
+    conic-gradient(
+      from 0deg,
+      transparent,
+      rgba(
+        241,
+        200,
+        108,
+        0.9
+      ),
+      transparent 36%,
+      transparent 72%,
+      rgba(
+        255,
+        227,
+        148,
+        0.62
+      ),
+      transparent
+    );
+  opacity: 0.76;
+  animation:
+    cardBorderRotate
+    4s linear infinite;
+}
+
+.cardOuterGlow {
+  position: absolute;
+  z-index: -1;
+  right: 8%;
+  bottom: -23px;
+  left: 8%;
+  height: 50px;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(
+        49,
+        196,
+        251,
+        0.4
+      ),
+      transparent 72%
+    );
+  filter: blur(13px);
+  opacity: 0;
+}
+
+.gameCardAvailable:hover
+  .cardOuterGlow {
+  opacity: 0.76;
+  animation:
+    cardGlowPulse
+    2s ease-in-out infinite;
+}
+
+.gameCardUpcoming
+  .cardOuterGlow {
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(
+        224,
+        180,
+        90,
+        0.36
+      ),
+      transparent 72%
+    );
+}
+
+.gameCardUpcoming:hover
+  .cardOuterGlow {
+  opacity: 0.56;
+  animation:
+    cardGlowPulse
+    2.5s ease-in-out infinite;
+}
+
+.cardShine {
+  position: absolute;
+  z-index: 18;
+  top: -130%;
+  left: -42%;
+  width: 18%;
+  height: 380%;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(
+        255,
+        255,
+        255,
+        0.2
+      ),
+      transparent
+    );
+  opacity: 0;
+  transform: rotate(23deg);
+}
+
+.gameCard:hover
+  .cardShine {
+  opacity: 1;
+  animation:
+    cardShineMove
+    0.8s ease forwards;
+}
+
+/* =====================================
+   SEE MORE
+===================================== */
+
+.seeMoreContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.seeMoreButton {
+  position: relative;
+  isolation: isolate;
+  display: inline-flex;
+  min-height: 47px;
+  gap: 11px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px 0 22px;
+  overflow: hidden;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.55px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background:
+    linear-gradient(
+      135deg,
+      #087fb9,
+      #20b8eb
+    );
+  border: 1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.13
+    );
+  border-radius: 11px;
+  box-shadow:
+    0 12px 28px
+      rgba(
+        20,
+        153,
+        210,
+        0.27
+      );
+  transition:
+    box-shadow 0.25s ease,
+    filter 0.25s ease,
+    transform 0.2s ease;
+}
+
+.seeMoreButton:hover {
+  filter: brightness(1.08);
+  box-shadow:
+    0 16px 36px
+      rgba(
+        20,
+        153,
+        210,
+        0.39
+      ),
+    0 0 24px
+      rgba(
+        47,
+        196,
+        249,
+        0.18
+      );
+  transform: translateY(-3px);
+}
+
+.seeMoreButton:active {
+  transform:
+    translateY(0)
+    scale(0.96);
+}
+
+.seeMoreButtonGlow {
+  position: absolute;
+  z-index: -2;
+  right: 12%;
+  bottom: -23px;
+  left: 12%;
+  height: 45px;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(
+        75,
+        210,
+        255,
+        0.55
+      ),
+      transparent 72%
+    );
+  filter: blur(12px);
+  animation:
+    seeMoreGlowPulse
+    2.2s ease-in-out infinite;
+}
+
+.seeMoreButtonShine {
+  position: absolute;
+  z-index: -1;
+  top: -130%;
+  left: -40%;
+  width: 20%;
+  height: 370%;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(
+        255,
+        255,
+        255,
+        0.31
+      ),
+      transparent
+    );
+  transform: rotate(23deg);
+}
+
+.seeMoreButton:hover
+  .seeMoreButtonShine {
+  animation:
+    seeMoreShineMove
+    0.85s ease forwards;
+}
+
+.seeMoreIcon {
+  display: inline-flex;
+  width: 29px;
+  height: 29px;
+  align-items: center;
+  justify-content: center;
+  color: #0a91ce;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.seeMoreIcon svg {
+  width: 16px;
+  height: 16px;
+  transition:
+    transform 0.25s ease;
+}
+
+.chevronExpanded {
+  transform: rotate(180deg);
+}
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes backgroundGlowOneMove {
+  0%,
+  100% {
+    opacity: 0.43;
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      )
+      scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform:
+      translate3d(
+        70px,
+        35px,
+        0
+      )
+      scale(1.08);
+  }
+}
+
+@keyframes backgroundGlowTwoMove {
+  0%,
+  100% {
+    opacity: 0.38;
+    transform:
+      translate3d(
+        0,
+        0,
+        0
+      )
+      scale(0.9);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform:
+      translate3d(
+        -70px,
+        -35px,
+        0
+      )
+      scale(1.07);
+  }
+}
+
+@keyframes backgroundSweepMove {
+  0%,
+  42% {
+    left: -27%;
+  }
+
+  72%,
+  100% {
+    left: 125%;
+  }
+}
+
+@keyframes headerBorderRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes headerGlowPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.88);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.77);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.14);
+  }
+}
+
+@keyframes summaryGlowPulse {
+  0%,
+  100% {
+    opacity: 0.34;
+    transform: scaleX(0.82);
+  }
+
+  50% {
+    opacity: 0.9;
+    transform: scaleX(1.08);
+  }
+}
+
+@keyframes availableStatusPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.14);
+  }
+}
+
+@keyframes upcomingStatusPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes cardBorderRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cardGlowPulse {
+  0%,
+  100% {
+    opacity: 0.32;
+    transform: scaleX(0.82);
+  }
+
+  50% {
+    opacity: 0.88;
+    transform: scaleX(1.08);
+  }
+}
+
+@keyframes cardShineMove {
+  from {
+    left: -42%;
+  }
+
+  to {
+    left: 125%;
+  }
+}
+
+@keyframes seeMoreGlowPulse {
+  0%,
+  100% {
+    opacity: 0.38;
+    transform: scaleX(0.85);
+  }
+
+  50% {
+    opacity: 0.95;
+    transform: scaleX(1.08);
+  }
+}
+
+@keyframes seeMoreShineMove {
+  from {
+    left: -40%;
+  }
+
+  to {
+    left: 125%;
+  }
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 1280px) {
+  .gamesGrid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+}
+
+@media (max-width: 900px) {
+  .gamesHeader {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .gameSummary {
+    width: 100%;
+  }
+
+  .gamesContainer {
+    width: min(
+      calc(100% - 32px),
+      1450px
+    );
+  }
+}
+
+@media (max-width: 700px) {
+  .gamesPage {
+    padding: 27px 0 65px;
+  }
+
+  .gamesContainer {
+    width: calc(
+      100% - 22px
+    );
+  }
+
+  .gamesHeader {
+    padding: 27px 23px;
+    border-radius: 17px;
+  }
+
+  .pageTitle {
+    font-size: 43px;
+    letter-spacing: -1.8px;
+  }
+
+  .pageDescription {
+    font-size: 13px;
+  }
+
+  .gamesSection {
+    margin-top: 23px;
+    padding: 20px 15px;
+    border-radius: 17px;
+  }
+
+  .sectionHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sectionLine {
+    width: 100%;
+  }
+
+  .gamesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .gameCard {
+    min-height: 150px;
+    grid-template-columns:
+      135px minmax(0, 1fr);
+  }
+
+  .gameImageWrapper,
+  .gameImageFallback {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 430px) {
+  .gameCard {
+    grid-template-columns:
+      115px minmax(0, 1fr);
+  }
+
+  .gameInformation {
+    padding: 14px;
+  }
+
+  .gameTitle {
+    font-size: 14px;
+  }
+
+  .gameMeta {
+    font-size: 9px;
+  }
+
+  .gameActionText {
+    display: none;
+  }
+
+  .seeMoreButton {
+    width: 100%;
+  }
+}
+
+/* =====================================
+   REDUCED MOTION
+===================================== */
+
+@media (
+  prefers-reduced-motion:
+    reduce
+) {
+  .backgroundGlowOne,
+  .backgroundGlowTwo,
+  .backgroundLightSweep,
+  .headerAnimatedBorder,
+  .headerGlow,
+  .headerEyebrowDot,
+  .summaryGlow,
+  .statusBadgeAvailable
+    .statusDot,
+  .statusBadgeUpcoming
+    .statusDot,
+  .gameCardAvailable:hover
+    .cardAnimatedBorder,
+  .gameCardUpcoming:hover
+    .cardAnimatedBorder,
+  .gameCardAvailable:hover
+    .cardOuterGlow,
+  .gameCardUpcoming:hover
+    .cardOuterGlow,
+  .seeMoreButtonGlow {
+    animation: none;
+  }
+
+  .summaryItem,
+  .gameCard,
+  .gameImage,
+  .gameActionIcon,
+  .seeMoreButton,
+  .seeMoreIcon svg {
+    transition-duration:
+      0.01ms;
+  }
+}
