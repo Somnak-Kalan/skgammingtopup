@@ -1,19 +1,29 @@
-"use client";
-
-import {
-  useMemo,
-  useState,
-} from "react";
-
 import {
   bettingConfig,
-  bettingGames,
-} from "@/data/betting-games";
+  bettingGames as rawBettingGames,
+} from "@/data/betting";
 
 import type {
-  BettingCategory,
-  BettingGame,
-} from "@/data/betting-games";
+  BettingGame as RawBettingGame,
+} from "@/data/betting";
+
+type BettingCategory =
+  | "esports"
+  | "sports";
+
+type BettingGame = RawBettingGame & {
+  category: BettingCategory;
+  description: string;
+  partnerUrl: string;
+};
+
+const bettingGames: BettingGame[] =
+  rawBettingGames.map((game) => ({
+    ...game,
+    category: "esports",
+    description: `${game.name} esports betting`,
+    partnerUrl: game.affiliateUrl,
+  }));
 
 import styles from "@/styles/BettingGamesPage.module.css";
 
